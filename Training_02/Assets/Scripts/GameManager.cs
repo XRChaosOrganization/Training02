@@ -53,18 +53,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
-
-    IEnumerator PlayerSpawn()
-    {
-        transform.position = islandP1.position + 2 * Vector3.back + Vector3.up;
-        yield return new WaitForSeconds(0.1f);
-        playerSpawn.JoinPlayer(0);
-        //playerSpawn.transform.position = islandP2.position + 2 * Vector3.back + Vector3.up;
-        //yield return new WaitForSeconds(0.1f);
-        //playerSpawn.JoinPlayer(1);
-        yield break;
-    }
+ 
 
 
 }
