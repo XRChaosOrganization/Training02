@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class BuildingBehavior : MonoBehaviour
 {
-    
-    public enum BuildingType { Base, Industrial, Nature}
+    #region Data
 
-    [Header("Building")]
-    public BuildingType buildingType;
-    [Range(1, 3)] public int buildingTier = 1;
+    [Space]
+    [Space]
+    public BuildingSO buildingData;
+    public bool isPickable;
+    int buildingTier;
+    Mesh mesh;
+    int currentExp;
+
+
+
 
     [Header("Water")]
+    [Space]
     public bool rainCollect;
 
-    public int waterMax;
+    int waterMax;
     private int _waterQty;
     public int waterQty
     {
@@ -29,23 +36,33 @@ public class BuildingBehavior : MonoBehaviour
         }
     }
 
+
+
     [Header("Time")]
+    [Space]
+
     public bool hasTick = true;
-    public float tickDelay = 3f;
+    float tickDelay;
     static float minTickTime = 1f;
-    [HideInInspector] public float delayReduction = 0f;
+    float delayReduction = 0f;
     bool isTicking;
     public bool hasCooldown;
     public float cooldown;
-    float cdTimer;
+    bool isCd;
+
+    #endregion
+
+    #region Unity Loop
 
     private void Update()
     {
         DoTicking();
+        DoCooldown();
     }
 
+    #endregion
 
-    #region Ticking
+    #region Ticking & Cooldown
 
     IEnumerator DoTicking()
     {
@@ -62,11 +79,6 @@ public class BuildingBehavior : MonoBehaviour
         }
     }
 
-    public virtual void OnTick()
-    {
-        //Do OnTick Action
-    }
-
     public IEnumerator ReduceTickDelay(float amount, float time)
     {
         delayReduction = amount;
@@ -74,9 +86,84 @@ public class BuildingBehavior : MonoBehaviour
         delayReduction = 0f;       
     }
 
+    IEnumerator DoCooldown()
+    {
+        if (hasCooldown)
+        {
+
+            if (!isCd)
+            {
+                isCd = true;
+                yield return new WaitForSeconds(cooldown);
+                OnCooldown();
+                isCd = false;
+            }
+        }
+    }
+
     #endregion
 
+    #region Building Management
 
+    public void AddExp()
+    {
+        if (buildingData.tierValues[buildingTier - 1].amountForUpgrade <= 0)
+        {
+            //Play Cannont Upgrade Further Feedback
+        }
+        else
+        {
+            if (currentExp == buildingData.tierValues[buildingTier - 1].amountForUpgrade - 1)
+                UpgradeBuilding();
+            else
+            {
+                currentExp++;
+                //Play XP Up Feedback
+            }
+
+        }
+        
+
+    }
+
+    void UpgradeBuilding()
+    {
+        mesh = buildingData.tierValues[buildingTier].mesh;
+        waterMax = buildingData.tierValues[buildingTier].waterMax;
+        tickDelay = buildingData.tierValues[buildingTier].tickDelay;
+        cooldown = buildingData.tierValues[buildingTier].cooldown;
+
+        //Play Upgrade Feedback
+
+        currentExp = 0;
+        buildingTier++;
+    }
+
+    public void DestroyBuilding()
+    {
+        //Play Destroy FeedBack
+        Destroy(this.gameObject);
+    }
+    #endregion
+
+    #region Virtual Methods
+
+    public virtual void OnTick()
+    {
+        //Do OnTick Action
+    }
+    public virtual void OnCooldown()
+    {
+        //Do OnCooldown Action
+    }
+
+    public virtual void OnRainDrop(int water)
+    {
+        if(rainCollect)
+            waterQty += water;
+    }
+
+    #endregion
 
 
 
