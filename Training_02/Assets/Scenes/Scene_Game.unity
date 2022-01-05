@@ -15023,7 +15023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yOffset: 50
   cratePrefab: {fileID: 3763088387695364271, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
-  rainDropPrefab: {fileID: 9113614190930776454, guid: 7d097da7fbb8bc64bbe8e9b4ac4a4a5f, type: 3}
+  rainDropPrefab: {fileID: 2600266105761123410, guid: 581e59a5b018e724c9340e588c4135bd, type: 3}
   rainSpawnRate: 3
   crateSpawnRate: 4
   player1LandTiles:
