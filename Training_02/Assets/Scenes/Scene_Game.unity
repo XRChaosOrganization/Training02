@@ -2635,7 +2635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &322940680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3532,6 +3532,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -7271,7 +7272,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819807057}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f595433ff73e284c9c007c5d5952252, type: 3}
   m_Name: 
@@ -7310,6 +7311,7 @@ MonoBehaviour:
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
+      m_Flags: 0
     m_Reference: {fileID: 0}
   m_PlayerPrefab: {fileID: 893521668668972714, guid: 67431da0a50329a458a413ffd6a7dc57, type: 3}
   m_SplitScreen: 0
@@ -9847,6 +9849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
@@ -14989,6 +14992,98 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+--- !u!1 &1858422811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1858422813}
+  - component: {fileID: 1858422812}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1858422812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858422811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521efc8f710abcc4398bb50e3a719d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yOffset: 50
+  cratePrefab: {fileID: 3763088387695364271, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
+  rainDropPrefab: {fileID: 9113614190930776454, guid: 7d097da7fbb8bc64bbe8e9b4ac4a4a5f, type: 3}
+  rainSpawnRate: 3
+  crateSpawnRate: 4
+  player1LandTiles:
+  - {fileID: 1363898708}
+  - {fileID: 1280165074}
+  - {fileID: 394088689}
+  - {fileID: 2080348925}
+  - {fileID: 799430589}
+  - {fileID: 1806760905}
+  - {fileID: 1824974260}
+  - {fileID: 8443338736922952620}
+  player2LandTiles:
+  - {fileID: 2019833961}
+  - {fileID: 1677734452}
+  - {fileID: 1739735250}
+  - {fileID: 1190194817}
+  - {fileID: 461378430}
+  - {fileID: 1105635220}
+  - {fileID: 1273759444}
+  - {fileID: 576629023}
+  player1OceanTiles:
+  - {fileID: 96475428}
+  - {fileID: 2006927643}
+  - {fileID: 939841200}
+  - {fileID: 1760512562}
+  - {fileID: 1835224847}
+  - {fileID: 1614355490}
+  - {fileID: 2115374888}
+  - {fileID: 1824156695}
+  - {fileID: 458642865}
+  - {fileID: 858168048}
+  - {fileID: 2097665180}
+  - {fileID: 3957402280180716931}
+  player2OceanTiles:
+  - {fileID: 311428031}
+  - {fileID: 201768725}
+  - {fileID: 1336560954}
+  - {fileID: 1060648012}
+  - {fileID: 365624428}
+  - {fileID: 1644941592}
+  - {fileID: 1571729842}
+  - {fileID: 1130559293}
+  - {fileID: 370021206}
+  - {fileID: 1980659090}
+  - {fileID: 1711346742}
+  - {fileID: 431841640}
+--- !u!4 &1858422813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858422811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1866623044
 PrefabInstance:
   m_ObjectHideFlags: 0
