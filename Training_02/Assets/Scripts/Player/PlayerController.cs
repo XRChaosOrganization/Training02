@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isPickUp;
     [HideInInspector] public bool isInteract;
     [HideInInspector] public bool isDestroy;
+    Transform selectedTile;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             HandleMovement();
             FaceForward();
+            DetectTile();
         }
         
         
@@ -55,6 +57,37 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    void DetectTile()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(new Ray(transform.position, Vector3.down), out hit, 2f, 1 << 8))
+        {
+            Transform tile = hit.collider.transform;
+
+
+            if (selectedTile == null)
+            {
+                selectedTile = tile;
+                tile.GetChild(0).gameObject.SetActive(true);
+            }
+
+            if (tile != selectedTile)
+            {
+                selectedTile.GetChild(0).gameObject.SetActive(false);
+                tile.GetChild(0).gameObject.SetActive(true);
+                selectedTile = tile;
+            }
+        }
+        else
+        {
+            selectedTile.GetChild(0).gameObject.SetActive(false);
+            selectedTile = null;
+        }
+
+
+    }
+
+    #region Input Link
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
@@ -83,7 +116,9 @@ public class PlayerController : MonoBehaviour
             isDestroy = false;
     }
 
-    
+    #endregion
+
+
 
 
 }

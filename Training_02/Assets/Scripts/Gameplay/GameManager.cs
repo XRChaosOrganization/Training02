@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
 
+    
     public Transform islandP1;
     public Transform islandP2;
 
@@ -18,18 +19,18 @@ public class GameManager : MonoBehaviour
         playerSpawn = GetComponent<PlayerInputManager>();
         Debug.Log(InputSystem.devices.Count);
         
+        
     }
 
     private void Start()
     {
-        
         playerSpawn.playerPrefab.gameObject.transform.position = islandP1.position + 2 * Vector3.back + 1.55f * Vector3.up;
         playerSpawn.JoinPlayer(0);
         playerSpawn.playerPrefab.gameObject.transform.position = islandP2.position + 2 * Vector3.back + 1.55f * Vector3.up;
 
         if (InputSystem.devices.Count >= 2)
         {
-            
+
             playerSpawn.JoinPlayer(1);
         }
         else
