@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.3
-  smoothTurnTime: 5
+  smoothTurnTime: 0.00001
   haveControl: 0
   isPickUp: 0
   isInteract: 0
