@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnerComponent : MonoBehaviour
 {
     public float yOffset;
-    public GameObject cratePrefab;
+    public GameObject buildingPrefab;
     public GameObject rainDropPrefab;
     float waveRainSpawnRate;
     float waveCrateSpawnRate;
@@ -21,7 +21,6 @@ public class SpawnerComponent : MonoBehaviour
         waveRainSpawnRate = 2 * rainSpawnRate;
         waveCrateSpawnRate = 2 * crateSpawnRate;
     }
-
     
     void Update()
     {
@@ -86,6 +85,7 @@ public class SpawnerComponent : MonoBehaviour
             yield return new WaitForSeconds(rainSpawnRate);
         }
     }
+
     public void InstantiateCratesP1()
     {
         
@@ -93,11 +93,13 @@ public class SpawnerComponent : MonoBehaviour
 
         if (GameManager.gm.player1OceanTiles[r].GetComponent<TileComponent>().haveBuilding == false)
         {
-            GameManager.gm.player1OceanTiles[r].GetComponent<TileComponent>().haveBuilding = true;
-            Vector3 pos = new Vector3(GameManager.gm.player1OceanTiles[r].transform.position.x, GameManager.gm.player1OceanTiles[r].transform.position.y + yOffset, GameManager.gm.player1OceanTiles[r].transform.position.z);
-            Instantiate(cratePrefab, pos, Quaternion.identity, cratesContainer.transform);
+            TileComponent tile = GameManager.gm.player1OceanTiles[r].GetComponent<TileComponent>();
+            tile.SetBuilding(true, buildingPrefab.GetComponent<BuildingBehavior>());
+            Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
+            Instantiate(buildingPrefab, pos, Quaternion.identity, cratesContainer.transform);
         }
     }
+
     public void InstantiateCratesP2()
     {
 
@@ -105,10 +107,12 @@ public class SpawnerComponent : MonoBehaviour
 
         if (GameManager.gm.player2OceanTiles[r].GetComponent<TileComponent>().haveBuilding == false)
         {
-            GameManager.gm.player2OceanTiles[r].GetComponent<TileComponent>().haveBuilding = true;
-            Vector3 pos = new Vector3(GameManager.gm.player2OceanTiles[r].transform.position.x, GameManager.gm.player2OceanTiles[r].transform.position.y + yOffset, GameManager.gm.player2OceanTiles[r].transform.position.z);
-            Instantiate(cratePrefab, pos, Quaternion.identity, cratesContainer.transform);
+            TileComponent tile = GameManager.gm.player2OceanTiles[r].GetComponent<TileComponent>();
+            tile.SetBuilding(true, buildingPrefab.GetComponent<BuildingBehavior>());
+            Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
+            Instantiate(buildingPrefab, pos, Quaternion.identity, cratesContainer.transform);
         }
     }
+
    
 }

@@ -39,6 +39,18 @@ public class TileComponent : MonoBehaviour
         }
     }
 
+    public void SetBuilding(bool _b, BuildingBehavior _building = null)
+    {
+        haveBuilding = _b;
+
+        if (_building == null)
+            building.tile = null;
+        else _building.tile = this;
+
+        building = _building;
+
+    }
+
 
 
     private void OnDrawGizmosSelected()

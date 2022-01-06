@@ -8,11 +8,19 @@ public class BuildingBehavior : MonoBehaviour
 
     [Space]
     [Space]
+    [Header("State")]
+    [Space]
     public BuildingSO buildingData;
     public bool isPickable;
-    int buildingTier;
-    Mesh mesh;
-    int currentExp;
+    public bool hasLanded;
+    public TileComponent tile;
+    public bool isCrate = true;
+    public int buildingTier = 1;
+    public GameObject crateForm;
+    public float crateLifeTime = 4f;
+    public GameObject meshes;
+    List<GameObject> meshesList = new List<GameObject>();
+    int currentExp = 0;
 
 
 
@@ -54,15 +62,35 @@ public class BuildingBehavior : MonoBehaviour
 
     #region Unity Loop
 
+    private void Awake()
+    {
+
+        for (int i = 0; i < meshes.transform.childCount -1; i++)
+        {
+            meshesList.Add(meshes.transform.GetChild(i).gameObject);
+        }
+
+        foreach (GameObject mesh in meshesList)
+        {
+            mesh.SetActive(false);
+        }
+
+        crateForm.SetActive(true);
+
+
+        crateForm.GetComponent<Renderer>().materials[2] = buildingData.crateIcon;
+    }
+
     private void Update()
     {
         DoTicking();
         DoCooldown();
+        CrateLifetime();
     }
 
     #endregion
 
-    #region Ticking & Cooldown
+    #region Timing
 
     IEnumerator DoTicking()
     {
@@ -101,6 +129,23 @@ public class BuildingBehavior : MonoBehaviour
         }
     }
 
+    void CrateLifetime()
+    {
+        if (hasLanded && tile.tileType == TileComponent.TileType.Water)
+        {
+            crateLifeTime -= Time.deltaTime;
+            if (crateLifeTime < 0)
+            {
+                tile.SetBuilding(false, null);
+
+                //Play Feedback for Sinking Crate
+
+                Destroy(this.gameObject);
+                
+            }
+        }
+    }
+
     #endregion
 
     #region Building Management
@@ -128,7 +173,9 @@ public class BuildingBehavior : MonoBehaviour
 
     void UpgradeBuilding()
     {
-        mesh = buildingData.tierValues[buildingTier].mesh;
+        
+        meshesList[buildingTier - 1].SetActive(false);
+        meshesList[buildingTier].SetActive(true);
         waterMax = buildingData.tierValues[buildingTier].waterMax;
         tickDelay = buildingData.tierValues[buildingTier].tickDelay;
         cooldown = buildingData.tierValues[buildingTier].cooldown;

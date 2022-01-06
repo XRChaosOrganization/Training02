@@ -4,33 +4,17 @@ using UnityEngine;
 
 public class CrateComponent : MonoBehaviour
 {
-    public bool isOnTile;
-    public float crateLifeTime;
-    public GameObject currentOceanTile;
+    BuildingBehavior building;
 
-    private void Update()
+    private void Awake()
     {
-        //Si player pick la crate
-
-        //Si player ne pick pas la crate à ajouter :
-        if (isOnTile == true)
-        {
-            crateLifeTime -= Time.deltaTime;
-            if (crateLifeTime < 0)
-            {
-
-                Destroy(this.gameObject);
-                currentOceanTile.GetComponent<TileComponent>().haveBuilding = false;
-            }
-        }
+        building = GetComponentInParent<BuildingBehavior>(); 
     }
+
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.collider.CompareTag("OceanTile"))
-        {
-            isOnTile = true;
-            currentOceanTile = col.collider.gameObject;
-            
-        }
+            building.hasLanded = true;
     }
 }

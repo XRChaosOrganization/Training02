@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class BuildingTier
 {
-    public Mesh mesh;
+    
     public int waterMax;
     public float tickDelay;
     public float cooldown;
@@ -16,7 +16,7 @@ public class BuildingTier
 [CreateAssetMenu(fileName = "_Data", menuName = "ScriptableObjects/BuildingData", order = 1)]
 public class BuildingSO : ScriptableObject
 {
-    
+    public Material crateIcon;
     public enum BuildingType { Base, Industrial, Nature }
 
     [Space]
