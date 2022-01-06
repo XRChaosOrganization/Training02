@@ -7,7 +7,7 @@ public class WaterDropComponent : MonoBehaviour
     public int waterQty;
     private void OnCollisionEnter(Collision col)
     {
-        if (col.collider.CompareTag("Tile"))
+        if (col.collider.CompareTag("GroundTile"))
         {
             Destroy(this.gameObject);
         }

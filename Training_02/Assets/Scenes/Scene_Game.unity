@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2037,6 +2041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3276,6 +3284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3337,6 +3349,10 @@ PrefabInstance:
     - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_Name
       value: Tile_Ground (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
       objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
@@ -4324,6 +4340,10 @@ PrefabInstance:
     - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_Name
       value: Tile_Ground (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
       objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
@@ -6689,6 +6709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8536,6 +8560,10 @@ PrefabInstance:
     - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_Name
       value: Tile_Ground (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
       objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
@@ -10668,6 +10696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -11051,6 +11083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -11298,6 +11334,10 @@ PrefabInstance:
     - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_Name
       value: Tile_Ground (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
       objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
@@ -13544,6 +13584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14706,6 +14750,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -15720,7 +15768,7 @@ MonoBehaviour:
   yOffset: 50
   cratePrefab: {fileID: 3763088387695364271, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
   rainDropPrefab: {fileID: 2600266105761123410, guid: 581e59a5b018e724c9340e588c4135bd, type: 3}
-  rainSpawnRate: 2
+  rainSpawnRate: 1
   crateSpawnRate: 0.5
   rainDropContainer: {fileID: 1794325257}
   cratesContainer: {fileID: 761103083}
@@ -16067,6 +16115,10 @@ PrefabInstance:
     - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_Name
       value: Tile_Ground (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
       objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
@@ -17748,6 +17800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -18132,6 +18188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
+      objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -18486,6 +18546,10 @@ PrefabInstance:
     - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_Name
       value: Tile_Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+      propertyPath: m_TagString
+      value: GroundTile
       objectReference: {fileID: 0}
     - target: {fileID: 719601637887736606, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
       propertyPath: m_RootOrder
