@@ -114,9 +114,6 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
-  TileOverlay: {fileID: 0}
-  greenOverlay: {r: 0.3254902, g: 0.9019608, b: 0.23529412, a: 0}
-  redOverlay: {r: 0.7490196, g: 0.12941177, b: 0.11764706, a: 0}
   adjTiles: []
 --- !u!1 &8889375080365358373
 GameObject:
