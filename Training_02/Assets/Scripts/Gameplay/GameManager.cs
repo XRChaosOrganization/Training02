@@ -6,8 +6,11 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
+    public List<GameObject> player1LandTiles;
+    public List<GameObject> player2LandTiles;
+    public List<GameObject> player1OceanTiles;
+    public List<GameObject> player2OceanTiles;
 
-    
     public Transform islandP1;
     public Transform islandP2;
 

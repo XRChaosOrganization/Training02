@@ -309,6 +309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &30116052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 30116051}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &33613431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569254828338784982, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -670,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Name
       value: Tile_Ocean (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -1265,6 +1274,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Name
       value: Tile_Ocean (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -2070,6 +2083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &239285056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 239285055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &239332451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2478,6 +2496,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1 &309401598
@@ -2661,7 +2683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &322940680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3300,6 +3322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &375283294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 375283293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &382865680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4219,6 +4246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ocean (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1001 &463906497
@@ -4340,6 +4371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &465388647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 465388646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &466637390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5252,6 +5288,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1001 &574611541
@@ -5463,6 +5503,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -6691,6 +6735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &709944128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 709944127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &711319504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569254828338784982, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -6823,6 +6872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ocean (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1001 &743154488
@@ -6883,6 +6936,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -7027,6 +7084,36 @@ MonoBehaviour:
   haveBuilding: 0
   building: {fileID: 0}
   adjTiles: []
+--- !u!1 &761103083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 761103084}
+  m_Layer: 0
+  m_Name: 'CratesContainer '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &761103084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761103083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1858422813}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &761164862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7449,6 +7536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ocean (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1 &819807057
@@ -7495,6 +7586,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f595433ff73e284c9c007c5d5952252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1LandTiles:
+  - {fileID: 1596134624}
+  - {fileID: 2097964192}
+  - {fileID: 30116052}
+  - {fileID: 1881435334}
+  - {fileID: 1775860356}
+  - {fileID: 1241958307}
+  - {fileID: 465388647}
+  - {fileID: 8993770061084817587}
+  player2LandTiles:
+  - {fileID: 2030303204}
+  - {fileID: 941491107}
+  - {fileID: 239285056}
+  - {fileID: 709944128}
+  - {fileID: 1219858275}
+  - {fileID: 375283294}
+  - {fileID: 375283294}
+  - {fileID: 2126446411}
+  player1OceanTiles:
+  - {fileID: 385922115}
+  - {fileID: 1409916619}
+  - {fileID: 352776303}
+  - {fileID: 1805942289}
+  - {fileID: 1411259078}
+  - {fileID: 1867699590}
+  - {fileID: 495672164}
+  - {fileID: 755527047}
+  - {fileID: 1365580446}
+  - {fileID: 1497934125}
+  - {fileID: 367068461}
+  - {fileID: 406462090}
+  player2OceanTiles:
+  - {fileID: 2110520721}
+  - {fileID: 2131576424}
+  - {fileID: 2089566231}
+  - {fileID: 70746753}
+  - {fileID: 2138026411}
+  - {fileID: 1488033773}
+  - {fileID: 1504817666}
+  - {fileID: 578209261}
+  - {fileID: 1574537173}
+  - {fileID: 663941786}
+  - {fileID: 1548698705}
+  - {fileID: 1425764188}
   islandP1: {fileID: 1449409021}
   islandP2: {fileID: 104513583}
 --- !u!114 &819807060
@@ -7504,7 +7639,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819807057}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
@@ -7595,6 +7730,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Name
       value: Tile_Ocean (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -8024,6 +8163,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!4 &904426974 stripped
@@ -8440,6 +8583,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &941491107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 941491106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &949206843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10503,6 +10651,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1001 &1219858274
@@ -10562,6 +10714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &1219858275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 1219858274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1222956013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10677,6 +10834,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -10811,6 +10972,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1001 &1241528272
@@ -10932,6 +11097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &1241958307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 1241958306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1246764801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569254828338784982, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -11524,6 +11694,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Name
       value: Tile_Ocean (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -12879,6 +13053,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1001 &1484632084
@@ -13416,6 +13594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &1596134624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 1596134623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1600678376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569254828338784982, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -13867,6 +14050,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!4 &1655096785 stripped
@@ -14057,6 +14244,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Name
       value: Tile_Ocean (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -14561,6 +14752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &1775860356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 1775860355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1786344800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14737,6 +14933,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 569254828338784982, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
   m_PrefabInstance: {fileID: 871019304}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1794325257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794325258}
+  m_Layer: 0
+  m_Name: RainDropContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1794325258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794325257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1858422813}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1797440465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569254828338784982, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -15223,6 +15449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ocean (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!1001 &1828953437
@@ -15490,52 +15720,10 @@ MonoBehaviour:
   yOffset: 50
   cratePrefab: {fileID: 3763088387695364271, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
   rainDropPrefab: {fileID: 2600266105761123410, guid: 581e59a5b018e724c9340e588c4135bd, type: 3}
-  rainSpawnRate: 3
-  crateSpawnRate: 4
-  player1LandTiles:
-  - {fileID: 1363898708}
-  - {fileID: 1280165074}
-  - {fileID: 394088689}
-  - {fileID: 2080348925}
-  - {fileID: 799430589}
-  - {fileID: 1806760905}
-  - {fileID: 1824974260}
-  - {fileID: 8443338736922952620}
-  player2LandTiles:
-  - {fileID: 2019833961}
-  - {fileID: 1677734452}
-  - {fileID: 1739735250}
-  - {fileID: 1190194817}
-  - {fileID: 461378430}
-  - {fileID: 1105635220}
-  - {fileID: 1273759444}
-  - {fileID: 576629023}
-  player1OceanTiles:
-  - {fileID: 96475428}
-  - {fileID: 2006927643}
-  - {fileID: 939841200}
-  - {fileID: 1760512562}
-  - {fileID: 1835224847}
-  - {fileID: 1614355490}
-  - {fileID: 2115374888}
-  - {fileID: 1824156695}
-  - {fileID: 458642865}
-  - {fileID: 858168048}
-  - {fileID: 2097665180}
-  - {fileID: 3957402280180716931}
-  player2OceanTiles:
-  - {fileID: 311428031}
-  - {fileID: 201768725}
-  - {fileID: 1336560954}
-  - {fileID: 1060648012}
-  - {fileID: 365624428}
-  - {fileID: 1644941592}
-  - {fileID: 1571729842}
-  - {fileID: 1130559293}
-  - {fileID: 370021206}
-  - {fileID: 1980659090}
-  - {fileID: 1711346742}
-  - {fileID: 431841640}
+  rainSpawnRate: 2
+  crateSpawnRate: 0.5
+  rainDropContainer: {fileID: 1794325257}
+  cratesContainer: {fileID: 761103083}
 --- !u!4 &1858422813
 Transform:
   m_ObjectHideFlags: 0
@@ -15546,7 +15734,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1794325258}
+  - {fileID: 761103084}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15924,6 +16114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &1881435334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 1881435333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1884304753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569254828338784982, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -15987,6 +16182,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -16168,6 +16367,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Name
       value: Tile_Ocean (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -16653,6 +16856,10 @@ PrefabInstance:
     - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
@@ -17229,6 +17436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ocean (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!4 &2062305469 stripped
@@ -17583,6 +17794,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &2097964192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 2097964191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2103543590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17962,6 +18178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &2126446411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 2126446410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2130322905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18239,6 +18460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Ocean
       objectReference: {fileID: 0}
+    - target: {fileID: 913587426562109548, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
+      propertyPath: m_TagString
+      value: OceanTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fb99d98bf0d0346bd5b9419af1dab3, type: 3}
 --- !u!4 &3957402280180716931 stripped
@@ -18308,3 +18533,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+--- !u!1 &8993770061084817587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195723292246942116, guid: 6062c28cf9f48c645b8de34cfa53d46b, type: 3}
+  m_PrefabInstance: {fileID: 8993770061084817586}
+  m_PrefabAsset: {fileID: 0}
