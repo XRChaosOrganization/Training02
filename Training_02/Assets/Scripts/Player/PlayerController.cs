@@ -115,6 +115,10 @@ public class PlayerController : MonoBehaviour
         if (context.canceled)
             isDestroy = false;
     }
+    public void Pause()
+    {
+        UIManagerComponent.uIm.Pause();
+    }
 
     #endregion
 

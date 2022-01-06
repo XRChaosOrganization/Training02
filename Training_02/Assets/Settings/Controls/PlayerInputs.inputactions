@@ -11,7 +11,8 @@
                     "id": "e40e9ace-b776-4ce6-ae53-78145efd6c58",
                     "expectedControlType": "Stick",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "PickUp",
@@ -19,7 +20,8 @@
                     "id": "efa59293-dc91-4254-9661-9561e514a8b1",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Interact",
@@ -27,7 +29,8 @@
                     "id": "58c9f93a-28d4-47bb-ba3d-e6f81c00bcf3",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Destroy",
@@ -35,7 +38,17 @@
                     "id": "74d4debd-c2dd-45c8-a1f5-639702ccddd7",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "0ac5dc0d-e807-43ee-bb58-f9548da9725d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -80,6 +93,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Destroy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a86a3547-ef3c-4e40-bad2-6e1d2001cde3",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
