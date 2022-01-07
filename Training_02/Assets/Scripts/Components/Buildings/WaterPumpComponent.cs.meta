@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f85093e2c9bbcdc41864bf3f8677b83c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - buildingData: {fileID: 11400000, guid: 68750dfca0cc68a449b325f38c606adc, type: 2}
+  - tile: {instanceID: 0}
+  - crateForm: {instanceID: 0}
+  - meshes: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

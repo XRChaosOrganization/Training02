@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfc6ed7fc0a5af7408e80c8aea9d7202, type: 3}
-  m_Name: Bucket_Data
+  m_Name: Mountain_Data
   m_EditorClassIdentifier: 
   crateIcon: {fileID: 0}
-  buildingName: Bucket
-  buildingType: 0
+  buildingName: Mountain
+  buildingType: 2
   tierValues:
-  - waterMax: 2
-    tickDelay: 0
-    cooldown: 0
+  - waterMax: 6
+    tickDelay: 9
+    cooldown: 15
     amountForUpgrade: 2
-  - waterMax: 3
-    tickDelay: 0
-    cooldown: 0
+  - waterMax: 10
+    tickDelay: 6
+    cooldown: 15
     amountForUpgrade: 4
-  - waterMax: 4
-    tickDelay: 0
-    cooldown: 0
+  - waterMax: 16
+    tickDelay: 3
+    cooldown: 15
     amountForUpgrade: 0
