@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingBehavior : MonoBehaviour
+[System.Serializable]
+public class BuildingBehaviour : MonoBehaviour
 {
     #region Data
 
@@ -75,7 +76,13 @@ public class BuildingBehavior : MonoBehaviour
             mesh.SetActive(false);
         }
 
-        crateForm.SetActive(true);
+        if (isCrate)
+        {
+            crateForm.SetActive(true);
+            crateForm.GetComponent<Renderer>().materials[2] = buildingData.crateIcon;
+        }
+        else meshesList[0].SetActive(true);
+        
 
 
         crateForm.GetComponent<Renderer>().materials[2] = buildingData.crateIcon;
@@ -208,6 +215,11 @@ public class BuildingBehavior : MonoBehaviour
     {
         if(rainCollect)
             waterQty += water;
+    }
+
+    public virtual void SetWaterLevel(int level)
+    {
+        //Change depending on building
     }
 
     #endregion

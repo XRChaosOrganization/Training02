@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CrateComponent : MonoBehaviour
 {
-    BuildingBehavior building;
+    BuildingBehaviour building;
 
     private void Awake()
     {
-        building = GetComponentInParent<BuildingBehavior>(); 
+        building = GetComponentInParent<BuildingBehaviour>(); 
     }
 
 
