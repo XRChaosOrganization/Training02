@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5231786525374928612}
-  - component: {fileID: 3458809757568556692}
+  - component: {fileID: 5161160442238451119}
   m_Layer: 0
   m_Name: Prefab_Bucket
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3458809757568556692
+--- !u!114 &5161160442238451119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,17 +43,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4886645893531798622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f612d839217f364bb6361e2461a7b4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 878263b011435fb408a34509d5859afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingData: {fileID: 11400000, guid: ffa2da80846b77c47ba8b9a4585ec2d8, type: 2}
-  isPickable: 0
+  buildingData: {fileID: 0}
+  isPickable: 1
   hasLanded: 0
   tile: {fileID: 0}
   isCrate: 1
   buildingTier: 1
   crateForm: {fileID: 2970353371464495307}
-  crateLifeTime: 10
+  crateLifeTime: 4
   meshes: {fileID: 6955170372193807066}
   rainCollect: 0
   hasTick: 1

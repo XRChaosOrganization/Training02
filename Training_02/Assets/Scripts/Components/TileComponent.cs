@@ -8,7 +8,7 @@ public class TileComponent : MonoBehaviour
     public TileType tileType;
     public bool isUpgraded;
     public bool haveBuilding;
-    public BuildingBehavior building;
+    public BuildingBehaviour building;
 
 
     //Liste de directions qui pointent vers l'eau ? pour l'orientation des pompes ?
@@ -39,7 +39,7 @@ public class TileComponent : MonoBehaviour
         }
     }
 
-    public void SetBuilding(bool _b, BuildingBehavior _building = null)
+    public void SetBuilding(bool _b, BuildingBehaviour _building = null)
     {
         haveBuilding = _b;
 

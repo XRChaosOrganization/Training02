@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public Transform islandP1;
     public Transform islandP2;
 
+    [Space]
+    public Transform buildingContainer;
+
     PlayerInputManager playerSpawn;
 
     private void Awake()
