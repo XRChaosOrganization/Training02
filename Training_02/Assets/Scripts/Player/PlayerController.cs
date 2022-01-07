@@ -17,10 +17,13 @@ public class PlayerController : MonoBehaviour
 
     //Logic
     [HideInInspector] public bool haveControl;
-    [HideInInspector] public bool isPickUp;
+    /*[HideInInspector]*/ public bool isPickUp = false;
     [HideInInspector] public bool isInteracting;
     [HideInInspector] public bool isDestroy;
     private bool isCarryingObject = false;
+
+    //Inputs
+    bool pickUpInput;
 
     //HoldObject
     public Transform objectAnchor;
@@ -34,13 +37,19 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        DetectTile();
+        DoPickUp();
+    }
+
     private void FixedUpdate()
     {
         if (haveControl)
         {
             HandleMovement();
             FaceForward();
-            DetectTile();
+            
         }      
     }
 
@@ -98,6 +107,69 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void DoPickUp()
+    {
+        if (pickUpInput)
+        {
+            isPickUp = buildingHeld != null ? true : false;
+            TileComponent selectedTileComponent = selectedTile.gameObject.GetComponent<TileComponent>();
+
+            //Objet dans les mains && sur une case de terre sauf haricot
+            if (isPickUp && selectedTile != null)
+            {
+
+                //si case vide
+                if (selectedTileComponent.building == null)
+                {
+                    //si dans les mains j'ai un bucket qui n'est pas sous forme de caisse
+                    if (buildingHeld.buildingData.buildingName == "Bucket" && !buildingHeld.isCrate)
+                    {
+                        //poser bucket
+                        buildingHeld.tile = selectedTileComponent;
+                        selectedTileComponent.building = buildingHeld;
+                        buildingHeld.transform.SetParent(GameManager.gm.buildingContainer);
+                        buildingHeld.transform.position = selectedTile.position + Vector3.up * 0.21f;
+                        buildingHeld = null;
+                        
+                    }
+
+                    //si dans les mains j'ai une caisse qui n'est pas un bucket
+                    else if (buildingHeld.buildingData.buildingName != "Bucket" && buildingHeld.isCrate)
+                    {
+                        buildingHeld.Build(selectedTileComponent); //Surement A Modifier
+                    }
+
+
+                }
+
+                //si case pas vide && caisse dans les mains du même type que le building sur la case
+                else if (selectedTileComponent.building != null && selectedTileComponent.building.buildingData.buildingName == buildingHeld.buildingData.buildingName && buildingHeld.isCrate)
+                {
+                    selectedTileComponent.building.AddExp(); //Surement A Modifier
+                }
+
+                //isPickUp = false;
+
+
+            }
+
+            //Rien dans les mains && building ramassable surla case
+            if (!isPickUp && selectedTileComponent.building != null && selectedTileComponent.building.isPickable)
+            {
+                
+                buildingHeld = selectedTileComponent.building;
+                buildingHeld.tile = null;
+                buildingHeld.transform.SetParent(objectAnchor);
+                buildingHeld.transform.localPosition = Vector3.zero;
+                selectedTileComponent.Clear();
+                isPickUp = true;
+                pickUpInput = false;
+            }
+
+            pickUpInput = false;
+        }
+    }
+
 
     #region Input Link
     public void OnMove(InputAction.CallbackContext context)
@@ -109,51 +181,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnPickUp(InputAction.CallbackContext context)
     {
+        pickUpInput = true;
+        if (context.canceled)
+            pickUpInput = false;
 
-        TileComponent selectedTileComponent = selectedTile.gameObject.GetComponent<TileComponent>();
-        if (isPickUp && buildingHeld != null && selectedTile != null)
-        {
-
-            if (selectedTileComponent.building == null)
-            {
-                if (buildingHeld.buildingData.buildingName == "Bucket" && !buildingHeld.isCrate)
-                {
-                    buildingHeld.tile = selectedTileComponent;
-                    selectedTileComponent.building = buildingHeld;
-                    buildingHeld.transform.SetParent(GameManager.gm.buildingContainer);
-                    buildingHeld.transform.position = selectedTile.position + Vector3.up * 0.21f;
-                    buildingHeld = null;
-                    isPickUp = false;
-                }
-
-                if (buildingHeld.buildingData.buildingName != "Bucket" && buildingHeld.isCrate)
-                {
-                    buildingHeld.Build(selectedTileComponent); //Surement A Modifier
-                }
-
-
-            }
-            else if (selectedTileComponent.building.buildingData.buildingName == buildingHeld.buildingData.buildingName && buildingHeld.isCrate)
-            {
-                selectedTileComponent.building.AddExp(); //Surement A Modifier
-            }
-
-
-
-
-
-
-            
-        }
-        if (selectedTileComponent.building != null && selectedTileComponent.building.isPickable)
-        {
-            isPickUp = true;
-            buildingHeld = selectedTileComponent.building;
-            buildingHeld.transform.SetParent(objectAnchor);
-            buildingHeld.transform.localPosition = Vector3.zero;
-            selectedTileComponent.Clear();
-        }
-
+       
     }
 
     public void OnInteract(InputAction.CallbackContext context)

@@ -55,7 +55,7 @@ public class TileComponent : MonoBehaviour
 
     public void OnRainDrop(int _water)
     {
-        if (player != null && player.buildingHeld.buildingData.buildingName == "Bucket" && !player.buildingHeld.isCrate)
+        if (player != null && player.buildingHeld != null && player.buildingHeld.buildingData.buildingName == "Bucket" && !player.buildingHeld.isCrate)
             player.buildingHeld.OnRainDrop(_water);
         else if (building != null && building.rainCollect)
             building.OnRainDrop(_water);
