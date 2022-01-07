@@ -20,7 +20,11 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isPickUp;
     [HideInInspector] public bool isInteracting;
     [HideInInspector] public bool isDestroy;
-    private bool isCarryingObject = false; 
+    private bool isCarryingObject = false;
+
+    //HoldObject
+    public GameObject objectAnchor;
+    public BuildingBehaviour buildingHeld;
 
     //Anims 
     public Animator animator; 
@@ -73,27 +77,27 @@ public class PlayerController : MonoBehaviour
             if (selectedTile == null)
             {
                 selectedTile = tile;
+                selectedTile.gameObject.GetComponent<TileComponent>().player = this;
                 tile.GetChild(0).gameObject.SetActive(true);
             }
 
             if (tile != selectedTile)
             {
                 selectedTile.GetChild(0).gameObject.SetActive(false);
+                selectedTile.gameObject.GetComponent<TileComponent>().player = null;
                 tile.GetChild(0).gameObject.SetActive(true);
                 selectedTile = tile;
+                selectedTile.gameObject.GetComponent<TileComponent>().player = this;
             }
         }
         else
         {
             selectedTile.GetChild(0).gameObject.SetActive(false);
+            selectedTile.gameObject.GetComponent<TileComponent>().player = null;
             selectedTile = null;
         }
     }
 
-    public void OnRainDrop(int _water)
-    {
-        //if holding bucket, call bucket.onraindrop
-    }
 
     #region Input Link
     public void OnMove(InputAction.CallbackContext context)

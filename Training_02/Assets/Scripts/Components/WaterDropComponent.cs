@@ -7,17 +7,16 @@ public class WaterDropComponent : MonoBehaviour
     public int waterQty;
     private void OnCollisionEnter(Collision col)
     {
-
-        if (col.collider.CompareTag("Building"))
+        TileComponent tile = col.gameObject.GetComponent<TileComponent>();
+        if (tile != null && tile.tileType == TileComponent.TileType.Land)
         {
-            BuildingBehaviour building = col.gameObject.GetComponentInParent<BuildingBehaviour>();
-            building.OnRainDrop(waterQty);
+            tile.OnRainDrop(waterQty);
         }
             
-        if (col.collider.CompareTag("Player"))
-            col.gameObject.GetComponent<PlayerController>().OnRainDrop(waterQty);
 
         Destroy(this.gameObject);
+            
+
 
     }
 }

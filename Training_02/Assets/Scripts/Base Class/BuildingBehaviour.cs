@@ -46,7 +46,7 @@ public class BuildingBehaviour : MonoBehaviour
             else _waterQty = value;
         }
     }
-    public GameObject waterColliderGO;
+
     public GameObject waterLevelGO;
     public float yNullWaterLevel;
     public float yMaxWaterLevel;
@@ -89,8 +89,7 @@ public class BuildingBehaviour : MonoBehaviour
             crateForm.SetActive(true);
             if (waterLevelGO != null)
                 waterLevelGO.SetActive(false);
-            if (waterColliderGO != null)
-                waterColliderGO.SetActive(false);
+
             
         }
         else meshesList[0].SetActive(true);

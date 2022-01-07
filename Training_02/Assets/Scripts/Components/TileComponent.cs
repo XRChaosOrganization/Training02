@@ -9,6 +9,7 @@ public class TileComponent : MonoBehaviour
     public bool isUpgraded;
     public bool haveBuilding;
     public BuildingBehaviour building;
+    public PlayerController player;
 
 
     //Liste de directions qui pointent vers l'eau ? pour l'orientation des pompes ?
@@ -52,7 +53,14 @@ public class TileComponent : MonoBehaviour
 
     }
 
-
+    public void OnRainDrop(int _water)
+    {
+        if (player != null && player.buildingHeld.buildingData.buildingName == "Bucket" && !player.buildingHeld.isCrate)
+            player.buildingHeld.OnRainDrop(_water);
+        else if (building != null && building.rainCollect)
+            building.OnRainDrop(_water);
+            
+    }
 
     private void OnDrawGizmosSelected()
     {
