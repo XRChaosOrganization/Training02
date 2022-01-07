@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
                 tile.GetChild(0).gameObject.SetActive(true);
             }
 
-            if (tile != selectedTile)
+            else if (tile != selectedTile)
             {
                 selectedTile.GetChild(0).gameObject.SetActive(false);
                 selectedTile.gameObject.GetComponent<TileComponent>().player = null;
@@ -102,9 +102,13 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            selectedTile.GetChild(0).gameObject.SetActive(false);
-            selectedTile.gameObject.GetComponent<TileComponent>().player = null;
-            selectedTile = null;
+            if (selectedTile != null)
+            {
+                selectedTile.GetChild(0).gameObject.SetActive(false);
+                selectedTile.gameObject.GetComponent<TileComponent>().player = null;
+                selectedTile = null;
+            }
+
         }
     }
 
