@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: Bucket_Data
   m_EditorClassIdentifier: 
   crateIcon: {fileID: 0}
-  buildingName: 
+  buildingName: Bucket
   buildingType: 0
-  tierValues: []
+  tierValues:
+  - waterMax: 2
+    tickDelay: 0
+    cooldown: 0
+    amountForUpgrade: 3
+  - waterMax: 3
+    tickDelay: 0
+    cooldown: 0
+    amountForUpgrade: 5
+  - waterMax: 4
+    tickDelay: 0
+    cooldown: 0
+    amountForUpgrade: 0

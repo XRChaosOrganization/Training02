@@ -6,6 +6,7 @@ TagManager:
   tags:
   - OceanTile
   - GroundTile
+  - Building
   layers:
   - Default
   - TransparentFX

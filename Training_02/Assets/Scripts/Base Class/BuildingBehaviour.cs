@@ -211,13 +211,13 @@ public class BuildingBehaviour : MonoBehaviour
         //Do OnCooldown Action
     }
 
-    public virtual void OnRainDrop(int water)
+    public virtual void OnRainDrop(int _water)
     {
         if(rainCollect)
-            waterQty += water;
+            waterQty += _water;
     }
 
-    public virtual void SetWaterLevel(int level)
+    public virtual void SetWaterLevel(int _level)
     {
         //Change depending on building
     }

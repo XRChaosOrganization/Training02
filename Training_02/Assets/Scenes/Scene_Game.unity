@@ -14740,6 +14740,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1281725334}
     - target: {fileID: 5161160442238451119, guid: 3d02830a20cfe0a46a0bf4a09f8184aa, type: 3}
+      propertyPath: isCrate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161160442238451119, guid: 3d02830a20cfe0a46a0bf4a09f8184aa, type: 3}
       propertyPath: isPickable
       value: 1
       objectReference: {fileID: 0}
