@@ -37,6 +37,7 @@ public class BuildingBehaviour : MonoBehaviour
         get { return _waterQty; }
         set
         {
+
             if (value < 0)
                 _waterQty = 0;
             else if (value > waterMax)
@@ -65,6 +66,7 @@ public class BuildingBehaviour : MonoBehaviour
 
     private void Awake()
     {
+        crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
 
         for (int i = 0; i < meshes.transform.childCount -1; i++)
         {
@@ -79,19 +81,16 @@ public class BuildingBehaviour : MonoBehaviour
         if (isCrate)
         {
             crateForm.SetActive(true);
-            crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
+            
         }
         else meshesList[0].SetActive(true);
-        
 
-
-        crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
     }
 
     private void Update()
     {
-        DoTicking();
-        DoCooldown();
+        StartCoroutine(DoTicking());
+        StartCoroutine(DoCooldown());
         CrateLifetime();
     }
 
@@ -101,16 +100,12 @@ public class BuildingBehaviour : MonoBehaviour
 
     IEnumerator DoTicking()
     {
-        if (hasTick)
+        if (hasTick && !isTicking)
         {
-
-            if (!isTicking)
-            {
-                isTicking = true;
-                yield return new WaitForSeconds(tickDelay - delayReduction >= minTickTime ? tickDelay - delayReduction : minTickTime);
-                OnTick();
-                isTicking = false;
-            }
+            isTicking = true;
+            yield return new WaitForSeconds(tickDelay - delayReduction >= minTickTime ? tickDelay - delayReduction : minTickTime);
+            OnTick();  
+            isTicking = false;
         }
     }
 
@@ -143,7 +138,7 @@ public class BuildingBehaviour : MonoBehaviour
             crateLifeTime -= Time.deltaTime;
             if (crateLifeTime < 0)
             {
-                tile.SetBuilding(false, null);
+                tile.SetBuilding(false);
 
                 //Play Feedback for Sinking Crate
 
@@ -193,6 +188,11 @@ public class BuildingBehaviour : MonoBehaviour
         buildingTier++;
     }
 
+    public void AddWater(int _water)
+    {
+        waterQty += _water;
+    }
+
     public void DestroyBuilding()
     {
         //Play Destroy FeedBack
@@ -221,6 +221,8 @@ public class BuildingBehaviour : MonoBehaviour
     {
         //Change depending on building
     }
+
+    
 
     #endregion
 

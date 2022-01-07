@@ -22,6 +22,7 @@ public class TileComponent : MonoBehaviour
     private void Start()
     {
         DetectAdjacentTiles();
+        
 
     }
 
