@@ -79,13 +79,13 @@ public class BuildingBehaviour : MonoBehaviour
         if (isCrate)
         {
             crateForm.SetActive(true);
-            crateForm.GetComponent<Renderer>().materials[2] = buildingData.crateIcon;
+            crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
         }
         else meshesList[0].SetActive(true);
         
 
 
-        crateForm.GetComponent<Renderer>().materials[2] = buildingData.crateIcon;
+        crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
     }
 
     private void Update()
