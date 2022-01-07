@@ -664,6 +664,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &72584800
 PrefabInstance:
@@ -3230,6 +3231,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &357325845 stripped
 Transform:
@@ -3319,6 +3321,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &368041257
 PrefabInstance:
@@ -3606,6 +3609,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &393050086 stripped
 Transform:
@@ -3884,6 +3888,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1 &408149873
 GameObject:
@@ -4994,6 +4999,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &496619062
 PrefabInstance:
@@ -5794,6 +5800,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &586528285
 PrefabInstance:
@@ -6782,6 +6789,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &669944974
 PrefabInstance:
@@ -7499,6 +7507,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1 &761103083
 GameObject:
@@ -12615,6 +12624,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &1367852302 stripped
 Transform:
@@ -13109,6 +13119,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &1410489679
 PrefabInstance:
@@ -13188,6 +13199,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &1413635675 stripped
 Transform:
@@ -13339,6 +13351,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &1436712296
 PrefabInstance:
@@ -13725,6 +13738,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1 &1497934125 stripped
 GameObject:
@@ -13747,6 +13761,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &1504556724 stripped
 Transform:
@@ -13774,6 +13789,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &1512005533 stripped
 Transform:
@@ -14071,7 +14087,7 @@ PrefabInstance:
       objectReference: {fileID: 1775860357}
     - target: {fileID: 5161160442238451119, guid: 3d02830a20cfe0a46a0bf4a09f8184aa, type: 3}
       propertyPath: isCrate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5161160442238451119, guid: 3d02830a20cfe0a46a0bf4a09f8184aa, type: 3}
       propertyPath: isPickable
@@ -14219,6 +14235,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &1548779073
 PrefabInstance:
@@ -14360,6 +14377,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &1574823654 stripped
 Transform:
@@ -15948,6 +15966,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &1806760905 stripped
 Transform:
@@ -16946,6 +16965,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &1872221915
 PrefabInstance:
@@ -18269,6 +18289,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &2042017799 stripped
 Transform:
@@ -18791,6 +18812,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &2093326445 stripped
 Transform:
@@ -18951,6 +18973,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &2112471570
 PrefabInstance:
@@ -19339,6 +19362,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!4 &2132158060 stripped
 Transform:
@@ -19366,6 +19390,7 @@ MonoBehaviour:
   isUpgraded: 0
   haveBuilding: 0
   building: {fileID: 0}
+  player: {fileID: 0}
   adjTiles: []
 --- !u!1001 &2140425216
 PrefabInstance:

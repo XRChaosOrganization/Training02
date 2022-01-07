@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     {
         gm = this;
         playerSpawn = GetComponent<PlayerInputManager>();
-        Debug.Log(InputSystem.devices.Count);
         
         
     }

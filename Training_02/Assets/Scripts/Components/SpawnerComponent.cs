@@ -94,9 +94,9 @@ public class SpawnerComponent : MonoBehaviour
         if (GameManager.gm.player1OceanTiles[r].GetComponent<TileComponent>().haveBuilding == false)
         {
             TileComponent tile = GameManager.gm.player1OceanTiles[r].GetComponent<TileComponent>();
-            tile.SetBuilding(true, buildingPrefab.GetComponent<BuildingBehaviour>());
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
-            Instantiate(buildingPrefab, pos, Quaternion.identity, cratesContainer.transform);
+            GameObject obj = Instantiate(buildingPrefab, pos, Quaternion.identity, cratesContainer.transform);
+            tile.SetBuilding(true, obj.GetComponent<BuildingBehaviour>());
         }
     }
 
@@ -108,9 +108,9 @@ public class SpawnerComponent : MonoBehaviour
         if (GameManager.gm.player2OceanTiles[r].GetComponent<TileComponent>().haveBuilding == false)
         {
             TileComponent tile = GameManager.gm.player2OceanTiles[r].GetComponent<TileComponent>();
-            tile.SetBuilding(true, buildingPrefab.GetComponent<BuildingBehaviour>());
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
-            Instantiate(buildingPrefab, pos, Quaternion.identity, cratesContainer.transform);
+            GameObject obj = Instantiate(buildingPrefab, pos, Quaternion.identity, cratesContainer.transform);
+            tile.SetBuilding(true, obj.GetComponent<BuildingBehaviour>());
         }
     }
 

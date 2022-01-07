@@ -74,7 +74,7 @@ public class BuildingBehaviour : MonoBehaviour
         crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
         waterMax = buildingData.tierValues[0].waterMax;
 
-        for (int i = 0; i < meshes.transform.childCount -1; i++)
+        for (int i = 0; i < meshes.transform.childCount; i++)
         {
             meshesList.Add(meshes.transform.GetChild(i).gameObject);
         }
@@ -142,7 +142,7 @@ public class BuildingBehaviour : MonoBehaviour
 
     void CrateLifetime()
     {
-        if (hasLanded && tile.tileType == TileComponent.TileType.Water)
+        if (hasLanded && tile != null && tile.tileType == TileComponent.TileType.Water)
         {
             crateLifeTime -= Time.deltaTime;
             if (crateLifeTime < 0)
@@ -163,22 +163,18 @@ public class BuildingBehaviour : MonoBehaviour
 
     public void AddExp()
     {
-        if (buildingData.tierValues[buildingTier - 1].amountForUpgrade <= 0)
+        if (buildingData.tierValues[buildingTier - 1].amountForUpgrade > 0)
         {
-            //Play Cannont Upgrade Further Feedback
-        }
-        else
-        {
-            if (currentExp == buildingData.tierValues[buildingTier - 1].amountForUpgrade - 1)
+            if (currentExp == buildingData.tierValues[buildingTier - 1].amountForUpgrade - 1 && buildingTier <= buildingData.tierValues.Count)
                 UpgradeBuilding();
             else
             {
                 currentExp++;
                 //Play XP Up Feedback
             }
-
         }
-        
+
+
 
     }
 

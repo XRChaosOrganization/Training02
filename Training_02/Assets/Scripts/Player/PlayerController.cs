@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     //Logic
     [HideInInspector] public bool haveControl;
-    /*[HideInInspector]*/ public bool isPickUp = false;
+    [HideInInspector] public bool isPickUp = false;
     [HideInInspector] public bool isInteracting;
     [HideInInspector] public bool isDestroy;
     private bool isCarryingObject = false;
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     //HoldObject
     public Transform objectAnchor;
     public BuildingBehaviour buildingHeld;
+    public TileComponent targetedCrateWaterTile;
 
     //Anims 
     public Animator animator; 
@@ -145,29 +146,69 @@ public class PlayerController : MonoBehaviour
                 //si case pas vide && caisse dans les mains du même type que le building sur la case
                 else if (selectedTileComponent.building != null && selectedTileComponent.building.buildingData.buildingName == buildingHeld.buildingData.buildingName && buildingHeld.isCrate)
                 {
-                    selectedTileComponent.building.AddExp(); //Surement A Modifier
+                    selectedTileComponent.building.AddExp();
+                    Destroy(buildingHeld.gameObject);
+                    isPickUp = false;
+                    pickUpInput = false;
+
                 }
 
-                //isPickUp = false;
+
 
 
             }
-
-            //Rien dans les mains && building ramassable surla case
-            if (!isPickUp && selectedTileComponent.building != null && selectedTileComponent.building.isPickable)
+            //si rien dans les mains
+            else if (!isPickUp)
             {
-                
-                buildingHeld = selectedTileComponent.building;
-                buildingHeld.tile = null;
-                buildingHeld.transform.SetParent(objectAnchor);
-                buildingHeld.transform.localPosition = Vector3.zero;
-                selectedTileComponent.Clear();
-                isPickUp = true;
-                pickUpInput = false;
+                //si caisse dispo dans une case d'eau adjacente détectée
+                if (targetedCrateWaterTile != null && selectedTile != null)
+                {
+                    TileComponent t = selectedTile.gameObject.GetComponent<TileComponent>();
+                    bool b = false;
+
+                    foreach (TileComponent _tile in t.adjTiles )
+                    {
+                        if (targetedCrateWaterTile == _tile)
+                            b = true;
+                    }
+
+                    if (b)
+                        PickUpItem(targetedCrateWaterTile);
+
+                }
+
+                //sinon, si building ramassable sur la case
+                else if (selectedTileComponent.building != null && selectedTileComponent.building.isPickable)
+                {
+                    PickUpItem(selectedTileComponent);
+
+                    
+                }
             }
 
             pickUpInput = false;
         }
+    }
+
+    void PickUpItem(TileComponent _tile)
+    {
+        buildingHeld = _tile.building;
+        buildingHeld.tile = null;
+        buildingHeld.hasLanded = false;
+        buildingHeld.transform.SetParent(objectAnchor);
+        buildingHeld.transform.localPosition = Vector3.zero;
+        buildingHeld.crateForm.transform.localPosition = Vector3.zero;
+        Rigidbody rb = buildingHeld.gameObject.GetComponentInChildren<Rigidbody>();
+        if(rb != null)
+        {
+            rb.useGravity = false;
+            rb.isKinematic = true;
+        }
+            
+
+        _tile.Clear();
+        isPickUp = true;
+        pickUpInput = false;
     }
 
 
@@ -184,8 +225,6 @@ public class PlayerController : MonoBehaviour
         pickUpInput = true;
         if (context.canceled)
             pickUpInput = false;
-
-       
     }
 
     public void OnInteract(InputAction.CallbackContext context)
