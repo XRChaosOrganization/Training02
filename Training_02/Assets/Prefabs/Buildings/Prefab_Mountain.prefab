@@ -90,12 +90,17 @@ MonoBehaviour:
   meshes: {fileID: 0}
   rainCollect: 1
   waterMax: 0
+  waterLevelGO: {fileID: 0}
+  yNullWaterLevel: 0.113
+  yMaxWaterLevel: 0.326
   hasTick: 1
   hasCooldown: 1
   cooldown: 15
-  waterLevel: {fileID: 8907614858210393132}
-  yNullWaterLevel: 0.113
-  yMaxWaterLevel: 0.326
+  isCollecting: 1
+  waterRate: 4
+  waterStack: 0
+  waterTransferRate: 8
+  lakeTransferRate: 8
 --- !u!1001 &1298259015120348963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,6 +152,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e17cb5def6897514f848655613421462, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67d99d60e8ffc184bb8f8bb2d278385d, type: 2}
     - target: {fileID: 919132149155446097, guid: e17cb5def6897514f848655613421462, type: 3}
       propertyPath: m_Name
       value: Mountain_T2
@@ -213,6 +222,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6133a44d86225364c8f9354b99f6a28f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67d99d60e8ffc184bb8f8bb2d278385d, type: 2}
     - target: {fileID: 919132149155446097, guid: 6133a44d86225364c8f9354b99f6a28f, type: 3}
       propertyPath: m_Name
       value: Mountain_T1
@@ -275,6 +288,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 569093246d4fbbb45b80953698cb43c9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67d99d60e8ffc184bb8f8bb2d278385d, type: 2}
     - target: {fileID: 919132149155446097, guid: 569093246d4fbbb45b80953698cb43c9, type: 3}
       propertyPath: m_Name
       value: Mountain_T3
@@ -413,11 +430,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d948c4a282d44f14c9ba450147d8b4f5, type: 3}
---- !u!1 &8907614858210393132 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d948c4a282d44f14c9ba450147d8b4f5, type: 3}
-  m_PrefabInstance: {fileID: 8601696434021073277}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8130655563830748822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d948c4a282d44f14c9ba450147d8b4f5, type: 3}
