@@ -20,6 +20,7 @@ public class BuildingBehaviour : MonoBehaviour
     public GameObject crateForm;
     public float crateLifeTime = 4f;
     public GameObject meshes;
+    
     List<GameObject> meshesList = new List<GameObject>();
     int currentExp = 0;
 
@@ -45,6 +46,10 @@ public class BuildingBehaviour : MonoBehaviour
             else _waterQty = value;
         }
     }
+    public GameObject waterColliderGO;
+    public GameObject waterLevelGO;
+    public float yNullWaterLevel;
+    public float yMaxWaterLevel;
 
 
 
@@ -67,6 +72,7 @@ public class BuildingBehaviour : MonoBehaviour
     private void Awake()
     {
         crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
+        waterMax = buildingData.tierValues[0].waterMax;
 
         for (int i = 0; i < meshes.transform.childCount -1; i++)
         {
@@ -81,6 +87,10 @@ public class BuildingBehaviour : MonoBehaviour
         if (isCrate)
         {
             crateForm.SetActive(true);
+            if (waterLevelGO != null)
+                waterLevelGO.SetActive(false);
+            if (waterColliderGO != null)
+                waterColliderGO.SetActive(false);
             
         }
         else meshesList[0].SetActive(true);
@@ -191,6 +201,7 @@ public class BuildingBehaviour : MonoBehaviour
     public void AddWater(int _water)
     {
         waterQty += _water;
+        SetWaterLevel(waterQty);
     }
 
     public void DestroyBuilding()
@@ -213,13 +224,22 @@ public class BuildingBehaviour : MonoBehaviour
 
     public virtual void OnRainDrop(int _water)
     {
-        if(rainCollect)
-            waterQty += _water;
+        if (rainCollect)
+        {
+            AddWater(_water);
+
+        }
+            
     }
 
     public virtual void SetWaterLevel(int _level)
     {
-        //Change depending on building
+        if (waterLevelGO != null)
+        {
+            Vector3 pos = new Vector3(waterLevelGO.transform.localPosition.x, 0f, waterLevelGO.transform.localPosition.z);
+            waterLevelGO.transform.localPosition = pos + Vector3.up * (yNullWaterLevel + (yMaxWaterLevel - yNullWaterLevel) * waterQty / waterMax);
+        }
+        
     }
 
     

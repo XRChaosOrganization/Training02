@@ -9,7 +9,11 @@ public class WaterDropComponent : MonoBehaviour
     {
 
         if (col.collider.CompareTag("Building"))
-            col.gameObject.GetComponent<BuildingBehaviour>().OnRainDrop(waterQty);
+        {
+            BuildingBehaviour building = col.gameObject.GetComponentInParent<BuildingBehaviour>();
+            building.OnRainDrop(waterQty);
+        }
+            
         if (col.collider.CompareTag("Player"))
             col.gameObject.GetComponent<PlayerController>().OnRainDrop(waterQty);
 
