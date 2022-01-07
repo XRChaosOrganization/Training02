@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BucketComponent : BuildingBehaviour
 {
-<<<<<<< Updated upstream
-=======
     [Space]
     [Header("Bucket")]
     [Space]
@@ -20,6 +18,5 @@ public class BucketComponent : BuildingBehaviour
         waterLevel.transform.localPosition = pos + Vector3.up * (yNullWaterLevel + (yMaxWaterLevel - yNullWaterLevel) * waterQty/waterMax);
     }
 
->>>>>>> Stashed changes
 
 }
