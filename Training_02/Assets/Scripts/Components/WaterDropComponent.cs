@@ -11,8 +11,13 @@ public class WaterDropComponent : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        //if la goutte touche un building qui peut collect
-        //if la goutte touche le joueur qui a le seau en main
-        
+
+        if (col.collider.CompareTag("Building"))
+            col.gameObject.GetComponent<BuildingBehaviour>().OnRainDrop(waterQty);
+        if (col.collider.CompareTag("Player"))
+            col.gameObject.GetComponent<PlayerController>().OnRainDrop(waterQty);
+
+
+
     }
 }

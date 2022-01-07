@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878263b011435fb408a34509d5859afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingData: {fileID: 0}
+  buildingData: {fileID: 11400000, guid: 1c77e7a29ccd9a844868d1a8ea6ecc1f, type: 2}
   isPickable: 1
   hasLanded: 0
   tile: {fileID: 0}
@@ -56,9 +56,13 @@ MonoBehaviour:
   crateLifeTime: 4
   meshes: {fileID: 6955170372193807066}
   rainCollect: 0
+  waterMax: 0
   hasTick: 1
   hasCooldown: 0
   cooldown: 0
+  waterLevel: {fileID: 0}
+  yNullWaterLevel: -0.207
+  yMaxWaterLevel: 0.19
 --- !u!1 &6955170372193807066
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 904e871c3ad6d2d498fc7594299421cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.196
+      value: -0.207
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 904e871c3ad6d2d498fc7594299421cb, type: 3}
       propertyPath: m_LocalPosition.z

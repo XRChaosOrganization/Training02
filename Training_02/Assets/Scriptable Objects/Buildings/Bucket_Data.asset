@@ -10,8 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfc6ed7fc0a5af7408e80c8aea9d7202, type: 3}
-  m_Name: TestBuilding_Data
+  m_Name: Bucket_Data
   m_EditorClassIdentifier: 
-  buildingName: 
+  crateIcon: {fileID: 0}
+  buildingName: Bucket
   buildingType: 0
-  tierValues: []
+  tierValues:
+  - waterMax: 2
+    tickDelay: 0
+    cooldown: 0
+    amountForUpgrade: 3
+  - waterMax: 3
+    tickDelay: 0
+    cooldown: 0
+    amountForUpgrade: 5
+  - waterMax: 4
+    tickDelay: 0
+    cooldown: 0
+    amountForUpgrade: 0

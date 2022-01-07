@@ -30,7 +30,7 @@ public class BuildingBehaviour : MonoBehaviour
     [Space]
     public bool rainCollect;
 
-    int waterMax;
+    public int waterMax;
     private int _waterQty;
     public int waterQty
     {
@@ -79,13 +79,13 @@ public class BuildingBehaviour : MonoBehaviour
         if (isCrate)
         {
             crateForm.SetActive(true);
-            crateForm.GetComponent<Renderer>().materials[2] = buildingData.crateIcon;
+            crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
         }
         else meshesList[0].SetActive(true);
         
 
 
-        crateForm.GetComponent<Renderer>().materials[2] = buildingData.crateIcon;
+        crateForm.GetComponent<Renderer>().materials[2].mainTexture = buildingData.crateIcon;
     }
 
     private void Update()
@@ -211,13 +211,13 @@ public class BuildingBehaviour : MonoBehaviour
         //Do OnCooldown Action
     }
 
-    public virtual void OnRainDrop(int water)
+    public virtual void OnRainDrop(int _water)
     {
         if(rainCollect)
-            waterQty += water;
+            waterQty += _water;
     }
 
-    public virtual void SetWaterLevel(int level)
+    public virtual void SetWaterLevel(int _level)
     {
         //Change depending on building
     }

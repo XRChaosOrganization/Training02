@@ -87,6 +87,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void OnRainDrop(int _water)
+    {
+        //if holding bucket, call bucket.onraindrop
+    }
+
     #region Input Link
     public void OnMove(InputAction.CallbackContext context)
     {
