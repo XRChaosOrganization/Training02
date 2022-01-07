@@ -177,7 +177,7 @@ MonoBehaviour:
   isPickable: 1
   hasLanded: 0
   tile: {fileID: 0}
-  isCrate: 1
+  isCrate: 0
   buildingTier: 1
   crateForm: {fileID: 2970353371464495307}
   crateLifeTime: 4

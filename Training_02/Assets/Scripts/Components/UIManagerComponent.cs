@@ -2,15 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManagerComponent : MonoBehaviour
 {
     public Animator transition;
     public GameObject pausePanel;
     public static UIManagerComponent uIm;
+    public TextMeshProUGUI timerDisplayText;
     public void Awake()
     {
         uIm = this;
+    }
+    public void Update()
+    {
+        float currentTime = GameManager.gm.timer;
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+        timerDisplayText.text = minutes + ":" + seconds;
+        
     }
     public void Play()
     {

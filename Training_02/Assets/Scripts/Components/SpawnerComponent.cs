@@ -5,14 +5,19 @@ using UnityEngine;
 public class SpawnerComponent : MonoBehaviour
 {
     public float yOffset;
-    public GameObject buildingPrefab;
+    public GameObject buildingPrefab; // Supprimable
     public GameObject rainDropPrefab;
+    public GameObject snowDropPrefab;
     float waveRainSpawnRate;
     float waveCrateSpawnRate;
     public float rainSpawnRate;
     public float crateSpawnRate;
     public GameObject rainDropContainer;
     public GameObject cratesContainer;
+    public List<GameObject> earlySpawnerList;
+    public List<GameObject> midSpawnerList;
+    public List<GameObject> LateSpawnerList;
+    public int spawningPhase ;
 
     
     
@@ -47,10 +52,11 @@ public class SpawnerComponent : MonoBehaviour
             waveCrateSpawnRate = 2 * crateSpawnRate;
         }
     }
+    
    
     IEnumerator InstantiateRainDrops()
     {
-        List<Transform> whereToSpawn = new List<Transform>();
+        List<GameObject> whereToSpawn = new List<GameObject>();
         List<int> randomizator = new List<int>();
         while (randomizator.Count < 6)
         {
@@ -62,26 +68,34 @@ public class SpawnerComponent : MonoBehaviour
         {
             for (int i = 0; i < 6; i++)
             {
-                whereToSpawn.Add(GameManager.gm.player1LandTiles[randomizator[i]].transform);
+                whereToSpawn.Add(GameManager.gm.player1LandTiles[randomizator[i]]);
                 i++;
-                whereToSpawn.Add(GameManager.gm.player2LandTiles[randomizator[i]].transform);
+                whereToSpawn.Add(GameManager.gm.player2LandTiles[randomizator[i]]);
             }
         }
         else
         {
             for (int i = 0; i < 6; i++)
             {
-                whereToSpawn.Add(GameManager.gm.player2LandTiles[randomizator[i]].transform);
+                whereToSpawn.Add(GameManager.gm.player2LandTiles[randomizator[i]]);
                 i++;
-                whereToSpawn.Add(GameManager.gm.player1LandTiles[randomizator[i]].transform);
+                whereToSpawn.Add(GameManager.gm.player1LandTiles[randomizator[i]]);
             }
         }
    
         for (int i = 0; i < 6; i++)
         {
             //if la goutte spawn au dessus d'une montagne
-            Vector3 pos = new Vector3(whereToSpawn[i].transform.position.x, whereToSpawn[i].transform.position.y + yOffset, whereToSpawn[i].transform.position.z);
-            Instantiate(rainDropPrefab, pos, Quaternion.identity,rainDropContainer.transform);
+            if (whereToSpawn[i].GetComponent<TileComponent>().building.buildingData.buildingName == "Mountain")
+            {
+                Vector3 pos = new Vector3(whereToSpawn[i].transform.position.x, whereToSpawn[i].transform.position.y + yOffset, whereToSpawn[i].transform.position.z);
+                Instantiate(rainDropPrefab, pos, Quaternion.identity, rainDropContainer.transform);
+            }
+            else
+            {
+                Vector3 pos = new Vector3(whereToSpawn[i].transform.position.x, whereToSpawn[i].transform.position.y + yOffset, whereToSpawn[i].transform.position.z);
+                Instantiate(rainDropPrefab, pos, Quaternion.identity, rainDropContainer.transform);
+            }
             yield return new WaitForSeconds(rainSpawnRate);
         }
     }
@@ -89,28 +103,59 @@ public class SpawnerComponent : MonoBehaviour
     public void InstantiateCratesP1()
     {
         
-        int r = Random.Range(0, 12);
-
-        if (GameManager.gm.player1OceanTiles[r].GetComponent<TileComponent>().haveBuilding == false)
+        int randTile = Random.Range(0, 12);
+        if (GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 1)
         {
-            TileComponent tile = GameManager.gm.player1OceanTiles[r].GetComponent<TileComponent>();
+            int randBuildIndex = Random.Range(0, 3);
+            TileComponent tile = GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>();
+            tile.SetBuilding(true, earlySpawnerList[randBuildIndex].GetComponent<BuildingBehaviour>());
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
-            GameObject obj = Instantiate(buildingPrefab, pos, Quaternion.identity, cratesContainer.transform);
-            tile.SetBuilding(true, obj.GetComponent<BuildingBehaviour>());
+            Instantiate(earlySpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+        } 
+        if (GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 2)
+        {
+            int randBuildIndex = Random.Range(0, 7);
+            TileComponent tile = GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>();
+            tile.SetBuilding(true, midSpawnerList[randBuildIndex].GetComponent<BuildingBehaviour>());
+            Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
+            Instantiate(midSpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+        } 
+        if (GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 3)
+        {
+            int randBuildIndex = Random.Range(0, 7);
+            TileComponent tile = GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>();
+            tile.SetBuilding(true, LateSpawnerList[randBuildIndex].GetComponent<BuildingBehaviour>());
+            Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
+            Instantiate(LateSpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
         }
     }
 
     public void InstantiateCratesP2()
     {
-
-        int r = Random.Range(0, 12);
-
-        if (GameManager.gm.player2OceanTiles[r].GetComponent<TileComponent>().haveBuilding == false)
+        int randTile = Random.Range(0, 12);
+        if (GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 1)
         {
-            TileComponent tile = GameManager.gm.player2OceanTiles[r].GetComponent<TileComponent>();
+            int randBuildIndex = Random.Range(0, 3);
+            TileComponent tile = GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>();
+            tile.SetBuilding(true, earlySpawnerList[randBuildIndex].GetComponent<BuildingBehaviour>());
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
-            GameObject obj = Instantiate(buildingPrefab, pos, Quaternion.identity, cratesContainer.transform);
-            tile.SetBuilding(true, obj.GetComponent<BuildingBehaviour>());
+            Instantiate(earlySpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+        }
+        if (GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 2)
+        {
+            int randBuildIndex = Random.Range(0, 7);
+            TileComponent tile = GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>();
+            tile.SetBuilding(true, midSpawnerList[randBuildIndex].GetComponent<BuildingBehaviour>());
+            Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
+            Instantiate(midSpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+        }
+        if (GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 3)
+        {
+            int randBuildIndex = Random.Range(0, 7);
+            TileComponent tile = GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>();
+            tile.SetBuilding(true, LateSpawnerList[randBuildIndex].GetComponent<BuildingBehaviour>());
+            Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
+            Instantiate(LateSpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
         }
     }
 

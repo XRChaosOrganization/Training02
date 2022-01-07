@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9231818a35347074da362a0155b9eb19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterQty: 0
+  waterQty: 1
   shadow: {fileID: 8687441842583431130}
   hitMask:
     serializedVersion: 2

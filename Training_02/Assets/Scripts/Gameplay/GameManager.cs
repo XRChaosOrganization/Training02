@@ -14,8 +14,12 @@ public class GameManager : MonoBehaviour
     public Transform islandP1;
     public Transform islandP2;
 
+    public float timer;
+
     [Space]
     public Transform buildingContainer;
+    public GameObject spawner;
+    private int spawnPhase;
 
     PlayerInputManager playerSpawn;
 
@@ -23,7 +27,6 @@ public class GameManager : MonoBehaviour
     {
         gm = this;
         playerSpawn = GetComponent<PlayerInputManager>();
-        
         
     }
 
@@ -54,12 +57,28 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<PlayerController>().haveControl = true;
         }
-
-
+    }
+    public void Update()
+    {
+        timer -= Time.deltaTime;
+        switch (timer)
+        {
+            case float n when (timer <= 300 && timer > 210 ):
+                spawner.GetComponent<SpawnerComponent>().spawningPhase = 1;
+                break;
+            case float n when (timer <= 210 && timer > 120):
+                spawner.GetComponent<SpawnerComponent>().spawningPhase = 2;
+                break;
+            case float n when (timer <= 120 && timer > 0):
+                spawner.GetComponent<SpawnerComponent>().spawningPhase = 3;
+                break;
+            case float n when timer <= 0:
+                //ENDGAME + Victory Screen !!
+                break;
+        }
 
     }
 
- 
 
 
 }
