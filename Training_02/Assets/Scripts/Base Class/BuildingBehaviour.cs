@@ -30,7 +30,7 @@ public class BuildingBehaviour : MonoBehaviour
     [Space]
     public bool rainCollect;
 
-    int waterMax;
+    public int waterMax;
     private int _waterQty;
     public int waterQty
     {

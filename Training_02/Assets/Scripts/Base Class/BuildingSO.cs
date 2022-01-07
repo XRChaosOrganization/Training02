@@ -16,7 +16,7 @@ public class BuildingTier
 [CreateAssetMenu(fileName = "_Data", menuName = "ScriptableObjects/BuildingData", order = 1)]
 public class BuildingSO : ScriptableObject
 {
-    public Material crateIcon;
+    public Texture crateIcon;
     public enum BuildingType { Base, Industrial, Nature }
 
     [Space]
