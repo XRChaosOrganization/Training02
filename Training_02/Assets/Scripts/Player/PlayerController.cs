@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
+    Transform selectedTile;
 
-    //Metrics
+
+    //Movements
     Vector3 movement = Vector3.zero;
     [SerializeField][Range(1f,5f)] float moveSpeed;
     [SerializeField] float smoothTurnTime;
@@ -16,9 +18,12 @@ public class PlayerController : MonoBehaviour
     //Logic
     [HideInInspector] public bool haveControl;
     [HideInInspector] public bool isPickUp;
-    [HideInInspector] public bool isInteract;
+    [HideInInspector] public bool isInteracting;
     [HideInInspector] public bool isDestroy;
-    Transform selectedTile;
+    private bool isCarryingObject = false; 
+
+    //Anims 
+    public Animator animator; 
 
     private void Awake()
     {
@@ -32,9 +37,7 @@ public class PlayerController : MonoBehaviour
             HandleMovement();
             FaceForward();
             DetectTile();
-        }
-        
-        
+        }      
     }
 
 
@@ -42,7 +45,10 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(transform.position + (3 * movement * moveSpeed * Time.fixedDeltaTime));
 
-        //Control Animator State
+        if(movement != Vector3.zero)
+            animator.SetBool("IsWalking", true);
+        else 
+            animator.SetBool("IsWalking", false);
 
         //Play Sound Effect ?
     }
@@ -53,8 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg, ref smoothTurnSpeed, smoothTurnTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-        }
-        
+        }       
     }
 
     void DetectTile()
@@ -83,8 +88,6 @@ public class PlayerController : MonoBehaviour
             selectedTile.GetChild(0).gameObject.SetActive(false);
             selectedTile = null;
         }
-
-
     }
 
     public void OnRainDrop(int _water)
@@ -109,9 +112,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        isInteract = true;
+        isInteracting = true;
         if (context.canceled)
-            isInteract = false;
+            isInteracting = false;
     }
 
     public void OnDestroyInput(InputAction.CallbackContext context)
@@ -126,8 +129,4 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
-
-
-
 }
