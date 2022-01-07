@@ -62,6 +62,12 @@ public class TileComponent : MonoBehaviour
             
     }
 
+    public void Clear()
+    {
+        haveBuilding = false;
+        building = null;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, 1.2f);

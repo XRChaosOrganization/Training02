@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private bool isCarryingObject = false;
 
     //HoldObject
-    public GameObject objectAnchor;
+    public Transform objectAnchor;
     public BuildingBehaviour buildingHeld;
 
     //Anims 
@@ -109,9 +109,51 @@ public class PlayerController : MonoBehaviour
 
     public void OnPickUp(InputAction.CallbackContext context)
     {
-        isPickUp = true;
-        if (context.canceled)
-            isPickUp = false;
+
+        TileComponent selectedTileComponent = selectedTile.gameObject.GetComponent<TileComponent>();
+        if (isPickUp && buildingHeld != null && selectedTile != null)
+        {
+
+            if (selectedTileComponent.building == null)
+            {
+                if (buildingHeld.buildingData.buildingName == "Bucket" && !buildingHeld.isCrate)
+                {
+                    buildingHeld.tile = selectedTileComponent;
+                    selectedTileComponent.building = buildingHeld;
+                    buildingHeld.transform.SetParent(GameManager.gm.buildingContainer);
+                    buildingHeld.transform.position = selectedTile.position + Vector3.up * 0.21f;
+                    buildingHeld = null;
+                    isPickUp = false;
+                }
+
+                if (buildingHeld.buildingData.buildingName != "Bucket" && buildingHeld.isCrate)
+                {
+                    buildingHeld.Build(selectedTileComponent); //Surement A Modifier
+                }
+
+
+            }
+            else if (selectedTileComponent.building.buildingData.buildingName == buildingHeld.buildingData.buildingName && buildingHeld.isCrate)
+            {
+                selectedTileComponent.building.AddExp(); //Surement A Modifier
+            }
+
+
+
+
+
+
+            
+        }
+        if (selectedTileComponent.building != null && selectedTileComponent.building.isPickable)
+        {
+            isPickUp = true;
+            buildingHeld = selectedTileComponent.building;
+            buildingHeld.transform.SetParent(objectAnchor);
+            buildingHeld.transform.localPosition = Vector3.zero;
+            selectedTileComponent.Clear();
+        }
+
     }
 
     public void OnInteract(InputAction.CallbackContext context)

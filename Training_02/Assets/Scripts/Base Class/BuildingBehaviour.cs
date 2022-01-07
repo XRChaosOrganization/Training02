@@ -208,6 +208,11 @@ public class BuildingBehaviour : MonoBehaviour
         //Play Destroy FeedBack
         Destroy(this.gameObject);
     }
+
+    public void Build(TileComponent _tile)
+    {
+        //A Coder
+    }
     #endregion
 
     #region Virtual Methods
