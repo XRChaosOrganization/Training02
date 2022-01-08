@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class UIManagerComponent : MonoBehaviour
 {
@@ -17,7 +18,10 @@ public class UIManagerComponent : MonoBehaviour
     public TextMeshProUGUI p2HeightText;
     public TextMeshProUGUI winnerDisplayText;
     public GameObject buildingCanvasPrefab;
-
+    public EventSystem eventSystem;
+    public float returnToMainTimer = 10.0f;
+    private float timer; 
+    public bool isGameOver = false; 
 
     public void Awake()
     {
@@ -39,7 +43,13 @@ public class UIManagerComponent : MonoBehaviour
         {
             timerDisplayText.text = minutes + ":" + seconds;
         }
-        
+
+        if(isGameOver)
+        {
+            timer += Time.deltaTime;
+            if (timer >= returnToMainTimer)
+                ToMain();
+        }
     }
 
     public void Play()
@@ -81,9 +91,10 @@ public class UIManagerComponent : MonoBehaviour
     
     public void EndgameDisplay(int _P1BeanHeight, int _P2BeanHeight)
     {
-        Time.timeScale = 0;
-        timerDisplayText.gameObject.SetActive(true);
+        isGameOver = true; 
+        timerDisplayText.gameObject.SetActive(false);
         endGamePanel.SetActive(true);
+        pausePanel.SetActive(false);
         p1HeightText.text = _P1BeanHeight.ToString() + " m";
         p2HeightText.text = _P2BeanHeight.ToString() + " m";
        
