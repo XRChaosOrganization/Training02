@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc6ed7fc0a5af7408e80c8aea9d7202, type: 3}
   m_Name: Well_Data
   m_EditorClassIdentifier: 
-  crateIcon: {fileID: 0}
+  crateIcon: {fileID: 2800000, guid: 766f0406f418d3f45ae47df0b5e59c5d, type: 3}
   buildingName: Well
   buildingType: 0
   tierValues:
