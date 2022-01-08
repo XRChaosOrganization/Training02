@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
             buildingHeld = null;
             isPickUp = false;
         }
-        if (!isPickUp && selectedTileComponent.building != null && !selectedTileComponent.building.isCrate && selectedTileComponent.building.buildingData.buildingName != "Bucket")
+        else if (!isPickUp && selectedTileComponent.building != null && !selectedTileComponent.building.isCrate && selectedTileComponent.building.buildingData.buildingName != "Bucket")
         {
             selectedTileComponent.building.DestroyBuilding();
             selectedTileComponent.building = null;
@@ -157,10 +157,12 @@ public class PlayerController : MonoBehaviour
 
     void DoInteract()
     {
-        if (isInteracting)
+        if (isInteracting && selectedTileComponent.building != null)
         {
-
+            selectedTileComponent.building.OnInteract(this);
         }
+
+        
     }
 
     void DoPickUp()

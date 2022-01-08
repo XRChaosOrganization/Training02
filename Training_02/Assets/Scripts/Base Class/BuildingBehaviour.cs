@@ -215,6 +215,7 @@ public class BuildingBehaviour : MonoBehaviour
 
         crateForm.SetActive(false);
         meshesList[0].SetActive(true);
+        waterLevelGO.SetActive(true);
     }
     #endregion
 
@@ -247,6 +248,36 @@ public class BuildingBehaviour : MonoBehaviour
             waterLevelGO.transform.localPosition = pos + Vector3.up * (yNullWaterLevel + (yMaxWaterLevel - yNullWaterLevel) * waterQty / waterMax);
         }
         
+    }
+
+    public void OnInteract(PlayerController _player)
+    {
+        if (buildingData.buildingName != "Bucket")
+        {
+            if (_player.isPickUp && _player.buildingHeld != null && _player.buildingHeld.buildingData.buildingName == "Bucket" && !_player.buildingHeld.isCrate)
+            {
+                int i = _player.buildingHeld.waterMax - _player.buildingHeld.waterQty;
+                if (waterQty <= i)
+                {
+                    _player.buildingHeld.AddWater(waterQty);
+                    AddWater(-waterQty);
+                }
+                else
+                {
+                    _player.buildingHeld.AddWater(i);
+                    AddWater(-i);
+                }
+
+            }
+            else DoInteract(_player);
+        }
+
+        _player.isInteracting = false;
+    }
+
+    public virtual void DoInteract(PlayerController _player)
+    {
+        //Do Interact Action
     }
 
     
