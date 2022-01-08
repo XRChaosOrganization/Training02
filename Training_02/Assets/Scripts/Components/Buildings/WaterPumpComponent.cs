@@ -13,7 +13,7 @@ public class WaterPumpComponent : BuildingBehaviour
     public override void OnTick()
     {
         if(!isCrate)
-        GiveWaterToAlambics(water);
+            GiveWaterToAlambics(water);
     }
 
     public override void OnCooldown()
@@ -36,5 +36,10 @@ public class WaterPumpComponent : BuildingBehaviour
         {
             _waterfilter.AddWater(_water / waterfilters.Count);
         }
+    }
+
+    public override void DoInteract(PlayerController _player)
+    {
+        hasTick = true;
     }
 }

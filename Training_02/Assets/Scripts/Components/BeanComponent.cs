@@ -20,7 +20,7 @@ public class BeanComponent : MonoBehaviour
         }
     }
 
-    public static int requiredWater = 6;
+    public static int requiredWater = 4;
     public GameObject beanSectionPrefab;
     public PlayerController player;
 
