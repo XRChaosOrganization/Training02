@@ -27,7 +27,7 @@ public class WaterPumpComponent : BuildingBehaviour
         this.tile.DetectAdjacentTiles();
         foreach (TileComponent _tile in tile.adjTiles)
         {
-            if (_tile.building.buildingData.buildingName == "WaterFilter")
+            if (_tile.building != null &&_tile.building.buildingData.buildingName == "WaterFilter")
             {
                 waterfilters.Add(_tile.building);
             }
