@@ -12,6 +12,7 @@ public class WaterPumpComponent : BuildingBehaviour
 
     public override void OnTick()
     {
+        if(!isCrate)
         GiveWaterToAlambics(water);
     }
 
