@@ -21,11 +21,11 @@ public class BuildingBehaviour : MonoBehaviour
     public GameObject crateForm;
     public float crateLifeTime = 4f;
     public GameObject meshes;
+    public GameObject buildingUIPrefab;
 
     
     public List<GameObject> meshesList = new List<GameObject>();
     int currentExp = 0;
-    
 
 
 
@@ -173,7 +173,8 @@ public class BuildingBehaviour : MonoBehaviour
             else
             {
                 currentExp++;
-
+                StartCoroutine(buildingUIPrefab.GetComponent<BuildingUIComponent>().DisplayXpUP(currentExp,buildingData.tierValues[buildingTier-1].amountForUpgrade));
+                
             }
         }
 
@@ -190,6 +191,7 @@ public class BuildingBehaviour : MonoBehaviour
         tickDelay = buildingData.tierValues[buildingTier].tickDelay;
         cooldown = buildingData.tierValues[buildingTier].cooldown;
 
+        
         //Play Upgrade Feedback
         
 

@@ -16,8 +16,9 @@ public class UIManagerComponent : MonoBehaviour
     public TextMeshProUGUI p1HeightText;
     public TextMeshProUGUI p2HeightText;
     public TextMeshProUGUI winnerDisplayText;
-    
-    
+    public GameObject buildingCanvasPrefab;
+
+
     public void Awake()
     {
         uIm = this;
