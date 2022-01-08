@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 338422724446833958}
   m_Layer: 0
   m_Name: Prefab_MagicBean_Section
-  m_TagString: Untagged
+  m_TagString: Bean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

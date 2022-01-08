@@ -25,6 +25,7 @@ public class BuildingBehaviour : MonoBehaviour
     
     public List<GameObject> meshesList = new List<GameObject>();
     int currentExp = 0;
+    
 
 
 
@@ -172,21 +173,7 @@ public class BuildingBehaviour : MonoBehaviour
             else
             {
                 currentExp++;
-                switch (currentExp)
-                {
-                    case 1:
-                        xpDisplay.GetComponent<TextMesh>().text = "*";
-                        break;
-                    case 2:
-                        xpDisplay.GetComponent<TextMesh>().text = "**";
-                        break;
-                    case 3:
-                        xpDisplay.GetComponent<TextMesh>().text = "***";
-                        break;
-                    default:
-                        xpDisplay.GetComponent<TextMesh>().text = "";
-                        break;
-                }
+
             }
         }
 

@@ -319,4 +319,22 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
+    #region Collisions
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Bean"))
+            other.gameObject.GetComponent<BeanComponent>().player = this;
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Bean"))
+            other.gameObject.GetComponent<BeanComponent>().player = null;
+    }
+
+    #endregion
 }
