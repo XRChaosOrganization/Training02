@@ -13,13 +13,14 @@ public class KrankComponent : BuildingBehaviour
 
     //Tant qu'on mash , ou pour une certaine durée selon le mash (dans ce cas utiliser Le deuxieme argument de la fct  ReducetickDelay call dans la boucle switch ci dessous (remplacer 0f) ):
     //Call la fonction si dessous:
-    public void EnhanceNearestIndustrialBuildings()
+
+    public override void DoInteract(PlayerController _player)
     {
         List<BuildingBehaviour> waterpumps = new List<BuildingBehaviour>();
         this.tile.DetectAdjacentTiles();
         foreach (TileComponent _tile in tile.adjTiles)
         {
-            if (_tile.building.buildingData.buildingName == "WaterPump")
+            if (_tile.building != null && _tile.building.buildingData.buildingName == "WaterPump")
             {
                 waterpumps.Add(_tile.building);
             }
@@ -29,13 +30,13 @@ public class KrankComponent : BuildingBehaviour
             switch (buildingTier)
             {
                 case 1:
-                    _waterpump.ReduceTickDelay(tier1Delayreduction, 0f);
+                    _waterpump.ReduceTickDelay(tier1Delayreduction, 3f);
                     break;
                 case 2:
-                    _waterpump.ReduceTickDelay(tier2Delayreduction, 0f);
+                    _waterpump.ReduceTickDelay(tier2Delayreduction, 4f);
                     break;
                 case 3:
-                    _waterpump.ReduceTickDelay(tier3Delayreduction, 0f);
+                    _waterpump.ReduceTickDelay(tier3Delayreduction, 5f);
                     break;
             }
         }
