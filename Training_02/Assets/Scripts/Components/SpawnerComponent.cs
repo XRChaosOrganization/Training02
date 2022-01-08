@@ -110,7 +110,14 @@ public class SpawnerComponent : MonoBehaviour
             TileComponent tile = GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>();
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
             GameObject crateTemp = Instantiate(earlySpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+
             tile.SetBuilding(true, crateTemp.GetComponent<BuildingBehaviour>());
+
+            BuildingBehaviour buildTemp = crateTemp.GetComponent<BuildingBehaviour>();
+            buildTemp.isCrate = true;
+            buildTemp.meshesList[0].SetActive(false);
+            buildTemp.crateForm.SetActive(true);
+
         } 
         if (GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 2)
         {
@@ -118,7 +125,13 @@ public class SpawnerComponent : MonoBehaviour
             TileComponent tile = GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>();
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
             GameObject crateTemp = Instantiate(midSpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+            
             tile.SetBuilding(true, crateTemp.GetComponent<BuildingBehaviour>());
+
+            BuildingBehaviour buildTemp = crateTemp.GetComponent<BuildingBehaviour>();
+            buildTemp.isCrate = true;
+            buildTemp.meshesList[0].SetActive(false);
+            buildTemp.crateForm.SetActive(true);
         } 
         if (GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 3)
         {
@@ -126,7 +139,13 @@ public class SpawnerComponent : MonoBehaviour
             TileComponent tile = GameManager.gm.player1OceanTiles[randTile].GetComponent<TileComponent>();
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
             GameObject crateTemp = Instantiate(LateSpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+            
             tile.SetBuilding(true, crateTemp.GetComponent<BuildingBehaviour>());
+
+            BuildingBehaviour buildTemp = crateTemp.GetComponent<BuildingBehaviour>();
+            buildTemp.isCrate = true;
+            buildTemp.meshesList[0].SetActive(false);
+            buildTemp.crateForm.SetActive(true);
         }
     }
 
@@ -139,7 +158,13 @@ public class SpawnerComponent : MonoBehaviour
             TileComponent tile = GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>();
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
             GameObject crateTemp = Instantiate(earlySpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+            
             tile.SetBuilding(true, crateTemp.GetComponent<BuildingBehaviour>());
+
+            BuildingBehaviour buildTemp = crateTemp.GetComponent<BuildingBehaviour>();
+            buildTemp.isCrate = true;
+            buildTemp.meshesList[0].SetActive(false);
+            buildTemp.crateForm.SetActive(true);
         }
         if (GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 2)
         {
@@ -147,7 +172,13 @@ public class SpawnerComponent : MonoBehaviour
             TileComponent tile = GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>();
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
             GameObject crateTemp = Instantiate(midSpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+            
             tile.SetBuilding(true, crateTemp.GetComponent<BuildingBehaviour>());
+
+            BuildingBehaviour buildTemp = crateTemp.GetComponent<BuildingBehaviour>();
+            buildTemp.isCrate = true;
+            buildTemp.meshesList[0].SetActive(false);
+            buildTemp.crateForm.SetActive(true);
         }
         if (GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>().haveBuilding == false && spawningPhase == 3)
         {
@@ -155,7 +186,13 @@ public class SpawnerComponent : MonoBehaviour
             TileComponent tile = GameManager.gm.player2OceanTiles[randTile].GetComponent<TileComponent>();
             Vector3 pos = (tile.transform.position) + Vector3.up * yOffset;
             GameObject crateTemp = Instantiate(LateSpawnerList[randBuildIndex], pos, Quaternion.identity, cratesContainer.transform);
+            
             tile.SetBuilding(true, crateTemp.GetComponent<BuildingBehaviour>());
+
+            BuildingBehaviour buildTemp = crateTemp.GetComponent<BuildingBehaviour>();
+            buildTemp.isCrate = true;
+            buildTemp.meshesList[0].SetActive(false);
+            buildTemp.crateForm.SetActive(true);
         }
     }
 

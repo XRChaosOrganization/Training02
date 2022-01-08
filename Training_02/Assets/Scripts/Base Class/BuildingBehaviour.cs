@@ -21,7 +21,7 @@ public class BuildingBehaviour : MonoBehaviour
     public float crateLifeTime = 4f;
     public GameObject meshes;
     
-    List<GameObject> meshesList = new List<GameObject>();
+    public List<GameObject> meshesList = new List<GameObject>();
     int currentExp = 0;
 
 

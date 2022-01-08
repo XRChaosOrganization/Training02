@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
     void DetectTile()
     {
         RaycastHit hit;
-        if (Physics.Raycast(new Ray(transform.position, Vector3.down), out hit, 2f, 1 << 8))
+        if (Physics.Raycast(new Ray(transform.position, Vector3.down), out hit, 3f, 1 << 8))
         {
             Transform tile = hit.collider.transform;
 
