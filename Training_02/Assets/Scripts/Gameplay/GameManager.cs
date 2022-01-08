@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
                 spawner.GetComponent<SpawnerComponent>().spawningPhase = 3;
                 break;
             case float n when timer <= 0:
-                //ENDGAME + Victory Screen !!
+                UIManagerComponent.uIm.EndgameDisplay(scoreP1*3, scoreP2*3);
                 break;
         }
 

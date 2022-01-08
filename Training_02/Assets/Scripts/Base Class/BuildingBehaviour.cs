@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class BuildingBehaviour : MonoBehaviour
@@ -20,6 +21,7 @@ public class BuildingBehaviour : MonoBehaviour
     public GameObject crateForm;
     public float crateLifeTime = 4f;
     public GameObject meshes;
+
     
     public List<GameObject> meshesList = new List<GameObject>();
     int currentExp = 0;
@@ -170,7 +172,21 @@ public class BuildingBehaviour : MonoBehaviour
             else
             {
                 currentExp++;
-                //Play XP Up Feedback
+                switch (currentExp)
+                {
+                    case 1:
+                        xpDisplay.GetComponent<TextMesh>().text = "*";
+                        break;
+                    case 2:
+                        xpDisplay.GetComponent<TextMesh>().text = "**";
+                        break;
+                    case 3:
+                        xpDisplay.GetComponent<TextMesh>().text = "***";
+                        break;
+                    default:
+                        xpDisplay.GetComponent<TextMesh>().text = "";
+                        break;
+                }
             }
         }
 
@@ -188,6 +204,7 @@ public class BuildingBehaviour : MonoBehaviour
         cooldown = buildingData.tierValues[buildingTier].cooldown;
 
         //Play Upgrade Feedback
+        
 
         currentExp = 0;
         buildingTier++;
