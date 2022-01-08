@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
     {
         
 
-        if (isPickUp && buildingHeld != null && buildingHeld.isCrate && buildingHeld.buildingData.buildingName != "Bucket")
+        if (isPickUp && buildingHeld != null && buildingHeld.isCrate)
         {
             buildingHeld.DestroyBuilding();
             buildingHeld = null;
