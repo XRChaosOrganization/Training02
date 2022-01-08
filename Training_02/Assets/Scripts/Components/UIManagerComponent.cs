@@ -33,7 +33,7 @@ public class UIManagerComponent : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
         if (seconds<10)
         {
-            timerDisplayText.text = minutes + ":0 " + seconds;
+            timerDisplayText.text = minutes + ":0" + seconds;
         }
         else
         {
