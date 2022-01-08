@@ -7,12 +7,12 @@ public class WaterPumpComponent : BuildingBehaviour
 
 
     // T1 = 6/9s ;T2 = 6/6s ;T3 =  6/3s
-    //public int water = 6;
+    public int water = 1;
 
     public override void OnTick()
     {
         if(!isCrate)
-            GiveWaterToAlambics(waterMax);
+            GiveWaterToAlambics(water);
     }
 
     public override void OnCooldown()

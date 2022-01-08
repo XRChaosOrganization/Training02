@@ -8,7 +8,7 @@ public class MountainComponent : BuildingBehaviour
     [Header("Mountain")]
     [Space]
     public bool isCollecting = true;
-    public int waterRate = 4; // T1 = 4/9s ;T2 = 4/6s ;T3 =  4/3s 
+    public int waterRate = 2; // T1 = 4/9s ;T2 = 4/6s ;T3 =  4/3s 
     public int waterStack;
     public int waterTransferRate = 8;
     public int lakeTransferRate = 8;
