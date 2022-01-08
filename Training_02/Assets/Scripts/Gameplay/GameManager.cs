@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
+    public int scoreP1;
+    public int scoreP2;
     public List<GameObject> player1LandTiles;
     public List<GameObject> player2LandTiles;
     public List<GameObject> player1OceanTiles;
