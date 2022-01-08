@@ -85,17 +85,17 @@ MonoBehaviour:
   tile: {fileID: 0}
   isCrate: 1
   buildingTier: 1
-  crateForm: {fileID: 0}
+  crateForm: {fileID: 6625670071414460820}
   crateLifeTime: 4
-  meshes: {fileID: 0}
+  meshes: {fileID: 7552176991643210428}
   rainCollect: 1
   waterMax: 0
+  waterLevelGO: {fileID: 2479654204591396124}
+  yNullWaterLevel: 0.279
+  yMaxWaterLevel: 0.424
   hasTick: 0
   hasCooldown: 0
   cooldown: 0
-  waterLevel: {fileID: 2479654204591396124}
-  yNullWaterLevel: 0.279
-  yMaxWaterLevel: 0.424
 --- !u!1001 &2999223251724495224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,6 +352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
+--- !u!1 &6625670071414460820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3763088387695364271, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
+  m_PrefabInstance: {fileID: 8055311494946117947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5816622668411620142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4571994060785095189, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}

@@ -85,12 +85,12 @@ MonoBehaviour:
   tile: {fileID: 0}
   isCrate: 1
   buildingTier: 1
-  crateForm: {fileID: 0}
+  crateForm: {fileID: 7602521053318283671}
   crateLifeTime: 4
-  meshes: {fileID: 0}
+  meshes: {fileID: 90183942210791183}
   rainCollect: 1
   waterMax: 0
-  waterLevelGO: {fileID: 0}
+  waterLevelGO: {fileID: 8907614858210393132}
   yNullWaterLevel: 0.113
   yMaxWaterLevel: 0.326
   hasTick: 1
@@ -368,6 +368,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
+--- !u!1 &7602521053318283671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3763088387695364271, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
+  m_PrefabInstance: {fileID: 6753350420918028600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7118577145349626669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4571994060785095189, guid: 207c7f485ef9bef4c892fd914f1b51af, type: 3}
@@ -430,6 +435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d948c4a282d44f14c9ba450147d8b4f5, type: 3}
+--- !u!1 &8907614858210393132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d948c4a282d44f14c9ba450147d8b4f5, type: 3}
+  m_PrefabInstance: {fileID: 8601696434021073277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8130655563830748822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d948c4a282d44f14c9ba450147d8b4f5, type: 3}
