@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
                     }
 
                     //si dans les mains j'ai une caisse qui n'est pas un bucket
-                    else if (buildingHeld.buildingData.buildingName != "Bucket" && buildingHeld.isCrate)
+                    else if (buildingHeld.buildingData.buildingName != "Bucket" && buildingHeld.isCrate && selectedTileComponent.tileType != TileComponent.TileType.Bean)
                     {
                         animator.SetTrigger("LandObject");
                         animator.SetBool("IsCarryingObject", false);
