@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileComponent : MonoBehaviour
 {
-    public enum TileType { Land, Water}
+    public enum TileType { Land, Water, Bean}
     public TileType tileType;
     public bool isUpgraded;
     public bool haveBuilding;
@@ -36,7 +36,7 @@ public class TileComponent : MonoBehaviour
         foreach (Collider col in detectedTiles)
         {
             TileComponent tile = col.GetComponent<TileComponent>();
-            if (tile != null && col.gameObject != this.gameObject)
+            if (tile != null && col.gameObject != this.gameObject && tile.tileType != TileType.Bean)
                 adjTiles.Add(tile);
         }
     }

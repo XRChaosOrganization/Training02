@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
             if (isPickUp && selectedTile != null)
             {
                 //si case vide
-                if (selectedTileComponent.building == null)
+                if (selectedTileComponent.building == null || selectedTileComponent.tileType == TileComponent.TileType.Bean)
                 {
                     //si dans les mains j'ai un bucket qui n'est pas sous forme de caisse
                     if (buildingHeld.buildingData.buildingName == "Bucket" && !buildingHeld.isCrate)
@@ -137,8 +137,13 @@ public class PlayerController : MonoBehaviour
                         //poser bucket
                         buildingHeld.tile = selectedTileComponent;
                         selectedTileComponent.building = buildingHeld;
-                        //buildingHeld.transform.position = selectedTile.position + Vector3.up * 0.21f;
-                        buildingHeld.transform.position = this.transform.position + Vector3.up * 0.21f;
+
+                        if(selectedTileComponent.tileType == TileComponent.TileType.Bean)
+                            buildingHeld.transform.position = this.transform.position + Vector3.up * 0.21f;
+                        else buildingHeld.transform.position = selectedTile.position + Vector3.up * 0.21f;
+                        //
+                        //
+                        
                         buildingHeld.transform.SetParent(GameManager.gm.buildingContainer);
                         buildingHeld.transform.eulerAngles = Vector3.zero;
                         buildingHeld = null;
