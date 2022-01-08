@@ -205,9 +205,16 @@ public class BuildingBehaviour : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public void Build(TileComponent _tile)
+    public void Build()
     {
-        //A Coder
+        waterMax = buildingData.tierValues[0].waterMax;
+        tickDelay = buildingData.tierValues[0].tickDelay;
+        cooldown = buildingData.tierValues[0].cooldown;
+        isPickable = false;
+        isCrate = false;
+
+        crateForm.SetActive(false);
+        meshesList[0].SetActive(true);
     }
     #endregion
 
