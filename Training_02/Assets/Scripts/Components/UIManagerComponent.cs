@@ -31,8 +31,6 @@ public class UIManagerComponent : MonoBehaviour
     {
         mainMenuSource.Play();
         StartCoroutine(LoadScene("Scene_Game"));
-        //StartCoroutine(FadeAnimation());
-        //SceneManager.LoadScene("Scene_Game");
     }
 
     public void Quit()
@@ -54,20 +52,14 @@ public class UIManagerComponent : MonoBehaviour
 
     public void ToMain()
     {
-        Time.timeScale = 1;
         StartCoroutine(LoadScene("Scene_Title"));
-        //SceneManager.LoadScene("Scene_Title");
     }
-
-    //IEnumerator FadeAnimation()
-    //{
-    //    transition.SetTrigger("StartFadeOut");
-    //    yield return new WaitForSeconds(2.0f);
-    //}
 
     IEnumerator LoadScene(string _scene)
     {
         transition.SetTrigger("StartFadeOut");
+        if (Time.timeScale != 1.0f)
+            Time.timeScale = 1;
         yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(_scene);
     }
