@@ -83,6 +83,7 @@ MonoBehaviour:
   isPickUp: 0
   isInteracting: 0
   isDestroy: 0
+  destroyHoldTime: 1
   objectAnchor: {fileID: 3539184766221115356}
   buildingHeld: {fileID: 0}
   targetedCrateWaterTile: {fileID: 0}

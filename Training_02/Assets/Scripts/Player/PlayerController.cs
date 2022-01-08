@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     //Inputs
     bool pickUpInput;
+    public float destroyHoldTime;
+    float holdTimer;
 
     //HoldObject
     public Transform objectAnchor;
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         DetectTile();
+        DetectDestroy();
         DoPickUp();
         objectAnchor.transform.eulerAngles = objAnchorRot;
     }
@@ -113,6 +116,39 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    void DetectDestroy()
+    {
+        if (isDestroy)
+        {
+            holdTimer += Time.deltaTime;
+            if (holdTimer >= destroyHoldTime)
+            {
+                DoDestroy();
+                holdTimer = 0f;
+            }
+        }
+        else holdTimer = 0f;
+    }
+
+    void DoDestroy()
+    {
+        TileComponent selectedTileComponent = selectedTile.gameObject.GetComponent<TileComponent>();
+
+        if (isPickUp && buildingHeld.isCrate)
+        {
+            buildingHeld.DestroyBuilding();
+            buildingHeld = null;
+            isPickUp = false;
+        }
+        else if (selectedTileComponent.building != null && !selectedTileComponent.building.isCrate && selectedTileComponent.building.buildingData.buildingName != "Bucket")
+        {
+            selectedTileComponent.building.DestroyBuilding();
+            selectedTileComponent.building = null;
+            selectedTileComponent.haveBuilding = false;
+        }
+    }
+
 
     void DoPickUp()
     {
