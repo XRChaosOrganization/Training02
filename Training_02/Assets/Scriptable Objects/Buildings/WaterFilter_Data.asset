@@ -16,15 +16,15 @@ MonoBehaviour:
   buildingName: WaterFilter
   buildingType: 1
   tierValues:
-  - waterMax: 8
+  - waterMax: 6
     tickDelay: 0
     cooldown: 0
     amountForUpgrade: 2
-  - waterMax: 14
+  - waterMax: 10
     tickDelay: 0
     cooldown: 0
     amountForUpgrade: 4
-  - waterMax: 20
+  - waterMax: 16
     tickDelay: 0
     cooldown: 0
     amountForUpgrade: 0

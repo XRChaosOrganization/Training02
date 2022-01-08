@@ -16,15 +16,15 @@ MonoBehaviour:
   buildingName: WaterPump
   buildingType: 1
   tierValues:
-  - waterMax: 4
+  - waterMax: 2
     tickDelay: 9
     cooldown: 25
     amountForUpgrade: 2
-  - waterMax: 6
+  - waterMax: 3
     tickDelay: 6
     cooldown: 35
     amountForUpgrade: 4
-  - waterMax: 8
+  - waterMax: 4
     tickDelay: 3
     cooldown: 45
     amountForUpgrade: 0
