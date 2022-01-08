@@ -221,7 +221,8 @@ public class BuildingBehaviour : MonoBehaviour
 
         crateForm.SetActive(false);
         meshesList[0].SetActive(true);
-        waterLevelGO.SetActive(true);
+        if(waterLevelGO != null)
+            waterLevelGO.SetActive(true);
     }
     #endregion
 
