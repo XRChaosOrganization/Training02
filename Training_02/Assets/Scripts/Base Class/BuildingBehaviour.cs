@@ -27,9 +27,6 @@ public class BuildingBehaviour : MonoBehaviour
     public List<GameObject> meshesList = new List<GameObject>();
     int currentExp = 0;
 
-
-
-
     [Header("Water")]
     [Space]
     public bool rainCollect;
@@ -54,8 +51,6 @@ public class BuildingBehaviour : MonoBehaviour
     public float yNullWaterLevel;
     public float yMaxWaterLevel;
 
-
-
     [Header("Time")]
     [Space]
 
@@ -68,6 +63,11 @@ public class BuildingBehaviour : MonoBehaviour
     public float cooldown;
     bool isCd;
 
+    [Header("SnF")]
+    [Space]
+    public ParticleSystem buildFX; 
+    public ParticleSystem xpFX; 
+    public ParticleSystem levelUpFX; 
     #endregion
 
     #region Unity Loop
@@ -169,12 +169,16 @@ public class BuildingBehaviour : MonoBehaviour
         if (buildingData.tierValues[buildingTier - 1].amountForUpgrade > 0)
         {
             if (currentExp == buildingData.tierValues[buildingTier - 1].amountForUpgrade - 1 && buildingTier <= buildingData.tierValues.Count)
+            {
                 UpgradeBuilding();
+            }
             else
             {
                 currentExp++;
                 StartCoroutine(buildingUIPrefab.GetComponent<BuildingUIComponent>().DisplayXpUP(currentExp,buildingData.tierValues[buildingTier-1].amountForUpgrade));
-                
+
+                if (xpFX != null)
+                    xpFX.Play();
             }
         }
 
@@ -191,9 +195,10 @@ public class BuildingBehaviour : MonoBehaviour
         tickDelay = buildingData.tierValues[buildingTier].tickDelay;
         cooldown = buildingData.tierValues[buildingTier].cooldown;
 
-        
+
         //Play Upgrade Feedback
-        
+        if(levelUpFX != null)
+            levelUpFX.Play();
 
         currentExp = 0;
         buildingTier++;
@@ -205,9 +210,22 @@ public class BuildingBehaviour : MonoBehaviour
         SetWaterLevel(waterQty);
     }
 
-    public void DestroyBuilding()
+    public void DestroyBuilding ()
+    {
+        StartCoroutine(DestroyBuiding());
+    }
+
+    public IEnumerator DestroyBuiding()
     {
         //Play Destroy FeedBack
+        meshes.SetActive(false);
+        waterLevelGO.SetActive(false);
+
+        if (buildFX != null)
+            buildFX.Play();
+
+        yield return new WaitForSeconds(1.5f);
+
         Destroy(this.gameObject);
     }
 
@@ -218,6 +236,10 @@ public class BuildingBehaviour : MonoBehaviour
         cooldown = buildingData.tierValues[0].cooldown;
         isPickable = false;
         isCrate = false;
+
+        //build fx
+        if (buildFX != null)
+            buildFX.Play();
 
         crateForm.SetActive(false);
         meshesList[0].SetActive(true);
