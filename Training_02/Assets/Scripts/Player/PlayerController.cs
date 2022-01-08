@@ -31,17 +31,20 @@ public class PlayerController : MonoBehaviour
     public TileComponent targetedCrateWaterTile;
 
     //Anims 
-    public Animator animator; 
+    public Animator animator;
+    Vector3 objAnchorRot = Vector3.zero;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        objAnchorRot = objectAnchor.transform.eulerAngles;
     }
 
     private void Update()
     {
         DetectTile();
         DoPickUp();
+        objectAnchor.transform.eulerAngles = objAnchorRot;
     }
 
     private void FixedUpdate()
@@ -50,8 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             HandleMovement();
             FaceForward();
-            
-        }      
+        }
     }
 
 
@@ -122,20 +124,24 @@ public class PlayerController : MonoBehaviour
             //Objet dans les mains && sur une case de terre sauf haricot
             if (isPickUp && selectedTile != null)
             {
-
                 //si case vide
                 if (selectedTileComponent.building == null)
                 {
                     //si dans les mains j'ai un bucket qui n'est pas sous forme de caisse
                     if (buildingHeld.buildingData.buildingName == "Bucket" && !buildingHeld.isCrate)
                     {
+                        //Anim
+                        animator.SetTrigger("LandObject");
+                        animator.SetBool("IsCarryingObject", false);
+
                         //poser bucket
                         buildingHeld.tile = selectedTileComponent;
                         selectedTileComponent.building = buildingHeld;
+                        //buildingHeld.transform.position = selectedTile.position + Vector3.up * 0.21f;
+                        buildingHeld.transform.position = this.transform.position + Vector3.up * 0.21f;
                         buildingHeld.transform.SetParent(GameManager.gm.buildingContainer);
-                        buildingHeld.transform.position = selectedTile.position + Vector3.up * 0.21f;
+                        buildingHeld.transform.eulerAngles = Vector3.zero;
                         buildingHeld = null;
-                        
                     }
 
                     //si dans les mains j'ai une caisse qui n'est pas un bucket
@@ -143,8 +149,6 @@ public class PlayerController : MonoBehaviour
                     {
                         buildingHeld.Build(selectedTileComponent); //Surement A Modifier
                     }
-
-
                 }
 
                 //si case pas vide && caisse dans les mains du même type que le building sur la case
@@ -154,13 +158,9 @@ public class PlayerController : MonoBehaviour
                     Destroy(buildingHeld.gameObject);
                     isPickUp = false;
                     pickUpInput = false;
-
                 }
-
-
-
-
             }
+
             //si rien dans les mains
             else if (!isPickUp)
             {
@@ -178,15 +178,12 @@ public class PlayerController : MonoBehaviour
 
                     if (b)
                         PickUpItem(targetedCrateWaterTile);
-
                 }
 
                 //sinon, si building ramassable sur la case
                 else if (selectedTileComponent.building != null && selectedTileComponent.building.isPickable)
                 {
                     PickUpItem(selectedTileComponent);
-
-                    
                 }
             }
 
@@ -196,6 +193,10 @@ public class PlayerController : MonoBehaviour
 
     void PickUpItem(TileComponent _tile)
     {
+        //Anims
+        animator.SetTrigger("PickupObject");
+        animator.SetBool("IsCarryingObject", true);
+
         buildingHeld = _tile.building;
         buildingHeld.tile = null;
         buildingHeld.hasLanded = false;
@@ -208,13 +209,11 @@ public class PlayerController : MonoBehaviour
             rb.useGravity = false;
             rb.isKinematic = true;
         }
-            
 
         _tile.Clear();
         isPickUp = true;
         pickUpInput = false;
     }
-
 
     #region Input Link
     public void OnMove(InputAction.CallbackContext context)
