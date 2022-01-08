@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc6ed7fc0a5af7408e80c8aea9d7202, type: 3}
   m_Name: Krank_Data
   m_EditorClassIdentifier: 
-  crateIcon: {fileID: 0}
+  crateIcon: {fileID: 2800000, guid: adf62e45667f52e438fc92a2709350d6, type: 3}
   buildingName: Krank
   buildingType: 1
   tierValues:
