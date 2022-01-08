@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
     {
         
 
-        if (isPickUp && buildingHeld != null && buildingHeld.isCrate)
+        if (isPickUp && buildingHeld != null && buildingHeld.isCrate && buildingHeld.buildingData.buildingName != "Bucket")
         {
             buildingHeld.DestroyBuilding();
             buildingHeld = null;
@@ -198,6 +198,7 @@ public class PlayerController : MonoBehaviour
                         buildingHeld.transform.SetParent(GameManager.gm.buildingContainer);
                         buildingHeld.transform.eulerAngles = Vector3.zero;
                         buildingHeld = null;
+                        isPickUp = false;
                     }
 
                     //si dans les mains j'ai une caisse qui n'est pas un bucket
