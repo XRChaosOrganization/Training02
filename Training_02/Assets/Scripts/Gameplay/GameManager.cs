@@ -62,17 +62,21 @@ public class GameManager : MonoBehaviour
     }
     public void Update()
     {
+        SpawnerComponent _spawner = spawner.GetComponent<SpawnerComponent>();
         timer -= Time.deltaTime;
         switch (timer)
         {
             case float n when (timer <= 300 && timer > 210 ):
-                spawner.GetComponent<SpawnerComponent>().spawningPhase = 1;
+                _spawner.spawningPhase = 1;
+                _spawner.crateSpawnRate = 4;
                 break;
             case float n when (timer <= 210 && timer > 120):
-                spawner.GetComponent<SpawnerComponent>().spawningPhase = 2;
+                _spawner.spawningPhase = 2;
+                _spawner.crateSpawnRate = 3;
                 break;
             case float n when (timer <= 120 && timer > 0):
-                spawner.GetComponent<SpawnerComponent>().spawningPhase = 3;
+                _spawner.spawningPhase = 3;
+                _spawner.crateSpawnRate = 2;
                 break;
             case float n when timer <= 0:
                 UIManagerComponent.uIm.EndgameDisplay(scoreP1*3, scoreP2*3);
